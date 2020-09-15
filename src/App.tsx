@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState, lazy, Suspense } from 'react'
 import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 import { UseWalletProvider } from 'use-wallet'
@@ -11,9 +11,13 @@ import TransactionProvider from './contexts/Transactions'
 import KbarProvider from './contexts/KbarProvider'
 import useModal from './hooks/useModal'
 import theme from './theme'
-import Farms from './views/Farms'
-import Home from './views/Home'
-import Stake from './views/Stake'
+// import Farms from './views/Farms'
+// import Home from './views/Home'
+// import Stake from './views/Stake'
+
+const Farms = lazy(() => import('./views/Farms'/* webpackChunkName: "Farms" */));
+const Home = lazy(() => import('./views/Home'/* webpackChunkName: "Home" */));
+const Stake = lazy(() => import('./views/Stake'/* webpackChunkName: "Stake" */));
 
 const App: React.FC = () => {
   const [mobileMenu, setMobileMenu] = useState(false)
@@ -33,13 +37,19 @@ const App: React.FC = () => {
         <MobileMenu onDismiss={handleDismissMobileMenu} visible={mobileMenu} />
         <Switch>
           <Route path="/" exact>
-            <Home />
+            <Suspense fallback={<div></div>}>
+              <Home />
+            </Suspense>
           </Route>
           <Route path="/farms">
-            <Farms />
+             <Suspense fallback={<div></div>}>
+                <Farms />
+             </Suspense>
           </Route>
           <Route path="/staking">
-            <Stake />
+             <Suspense fallback={<div></div>}>
+                <Stake />
+             </Suspense>
           </Route>
         </Switch>
       </Router>
