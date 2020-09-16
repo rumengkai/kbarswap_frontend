@@ -17,6 +17,14 @@ import useFarms from '../../../hooks/useFarms'
 import useKbar from '../../../hooks/useKbar'
 import { getEarned, getSommelierContract } from '../../../kbar/utils'
 import { bnToDec } from '../../../utils'
+import beer from '../../../assets/icon/beer.png'
+import bottle from '../../../assets/icon/bottle.png'
+import cocktail from '../../../assets/icon/cocktail.png'
+import sake from '../../../assets/icon/sake.png'
+import soju from '../../../assets/icon/soju.png'
+import tropical from '../../../assets/icon/tropical.png'
+import tumbler from '../../../assets/icon/tumbler.png'
+import wine from '../../../assets/icon/wine.png'
 
 interface FarmWithStakedValue extends Farm, StakedValue {
   apy: BigNumber
@@ -126,13 +134,35 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm }) => {
 
   const poolActive = true // startTime * 1000 - Date.now() <= 0
 
+  const iconFun = (icon: any) => {
+    switch (icon) {
+      case 'beer':
+        return beer
+      case 'bottle':
+        return bottle
+      case 'cocktail':
+        return cocktail
+      case 'sake':
+        return sake
+      case 'soju':
+        return soju
+      case 'tropical':
+        return tropical
+      case 'tumbler':
+        return tumbler
+      case 'wine':
+        return wine
+      default:
+        return 'icon'
+    }
+  }
   return (
     <StyledCardWrapper>
       {farm.tokenSymbol === 'KBAR' && <StyledCardAccent />}
       <Card>
         <CardContent>
           <StyledContent>
-            <CardIcon>{farm.icon}</CardIcon>
+            <CardIcon><img src={iconFun(farm.icon)} style={{ width: '40px', height: '40px' }} /></CardIcon>
             <StyledTitle>{farm.name}</StyledTitle>
             <StyledDetails>
               <StyledDetail>Deposit {farm.lpToken.toUpperCase()}</StyledDetail>

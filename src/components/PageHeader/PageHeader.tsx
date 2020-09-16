@@ -3,6 +3,15 @@ import styled from 'styled-components'
 
 import Container from '../Container'
 
+import beer from '../../assets/icon/beer.png'
+import bottle from '../../assets/icon/bottle.png'
+import cocktail from '../../assets/icon/cocktail.png'
+import sake from '../../assets/icon/sake.png'
+import soju from '../../assets/icon/soju.png'
+import tropical from '../../assets/icon/tropical.png'
+import tumbler from '../../assets/icon/tumbler.png'
+import wine from '../../assets/icon/wine.png'
+
 interface PageHeaderProps {
   icon: React.ReactNode
   subtitle?: string
@@ -17,10 +26,39 @@ const PageHeader: React.FC<PageHeaderProps> = ({ icon, subtitle, title }) => {
       return (<StyledTitle>{title}</StyledTitle>)
     }
   }
+  const iconFun = (icon: any) => {
+    switch (icon) {
+      case 'beer':
+        return beer
+      case 'bottle':
+        return bottle
+      case 'cocktail':
+        return cocktail
+      case 'sake':
+        return sake
+      case 'soju':
+        return soju
+      case 'tropical':
+        return tropical
+      case 'tumbler':
+        return tumbler
+      case 'wine':
+        return wine
+      default:
+        return 'icon'
+    }
+  }
+  const imgFun = (icon: any) => {
+    if (iconFun(icon) !== 'icon') {
+      return <img src={iconFun(icon)} style={{ width: '100px', height: '100px' }} />
+    } else {
+      return icon
+    }
+  }
   return (
     <Container size="sm">
       <StyledPageHeader>
-        <StyledIcon>{icon}</StyledIcon>
+        <StyledIcon>{imgFun(icon)}</StyledIcon>
         {Title()}
         <StyledSubtitle>{subtitle}</StyledSubtitle>
       </StyledPageHeader>

@@ -97,7 +97,7 @@ export const supportedPools = [
     name: 'KBAR Party!',
     symbol: 'KBAR-ETH UNI-V2 LP',
     tokenSymbol: 'KBAR',
-    icon: '🍾',
+    icon: 'bottle',
   },
   {
     pid: 0,
@@ -112,7 +112,7 @@ export const supportedPools = [
     name: 'Kompass Soju ',
     symbol: 'KOMP-ETH UNI-V2 LP',
     tokenSymbol: 'KOMP',
-    icon: '🍶',
+    icon: 'soju',
   },
   // {
   //   pid: 12,
