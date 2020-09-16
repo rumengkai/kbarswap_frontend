@@ -9,6 +9,7 @@ import Value from '../../../components/Value'
 import useEarnings from '../../../hooks/useEarnings'
 import useReward from '../../../hooks/useReward'
 import { getBalanceNumber } from '../../../utils/formatBalance'
+import soju from '../../../assets/icon/soju.png'
 
 interface HarvestProps {
   pid: number
@@ -24,9 +25,9 @@ const Harvest: React.FC<HarvestProps> = ({ pid }) => {
       <CardContent>
         <StyledCardContentInner>
           <StyledCardHeader>
-            <CardIcon>🍾</CardIcon>
+            <CardIcon><img src={soju} style={{ width: '40px', height: '40px' }} /></CardIcon>
             <Value value={getBalanceNumber(earnings)} />
-            <Label text="KBAR Earned" />
+            <Label text="Soju Earned" />
           </StyledCardHeader>
           <StyledCardActions>
             <Button
