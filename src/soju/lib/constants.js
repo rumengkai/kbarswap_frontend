@@ -64,6 +64,11 @@ UNI-V2 LP Address on mainnet for reference
 12 SOJU 0xce84867c3c02b05dc570d0135103d3fb9cc19433
 */
 
+// soju token:0x9380ef09e410071e2199a310ebce2e1781fe6f83
+
+// sommiler:0x1cbc7803acf0594ad28de1dde8d74304dc6f6c62
+
+
 export const contractAddresses = {
   lpAddresses: {
     1: '0x66d6dcdf72125c2f6a4039567076376ec6e2f324',
@@ -71,11 +76,11 @@ export const contractAddresses = {
   },
   soju: {
     1: '0x451c2220a761dc5759e5c6d17bd28a568318a26b',
-    3: '0x22073a445dde462fd6d2c88606f501aca8a50cb6',
+    3: '0x9380ef09e410071e2199a310ebce2e1781fe6f83',
   },
   Sommelier: {
     1: '0xa0fd402bacd5fa935f4acfede486ac32c87d3b9d',
-    3: '0xec7555fcf7d6c1f3eab9aa02ae05e5038e4064f8',
+    3: '0x1cbc7803acf0594ad28de1dde8d74304dc6f6c62',
   },
   weth: {
     1: '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2',
@@ -97,21 +102,21 @@ export const supportedPools = [
     name: 'SOJUParty',
     symbol: 'SOJU-ETH UNI-V2 LP',
     tokenSymbol: 'SOJU',
-    icon: 'bottle',
+    icon: 'soju',
   },
   {
     pid: 0,
     lpAddresses: {
       1: '0x0a24adf229e7b3271d314aa934749dd454029959',
-      3: '0x15c3c4147a862bbb56b46806a94719d72da410dd',
+      3: '0x922E77f15E46dDaA2125662eF22FC570d42CeeB0',
     },
     tokenAddresses: {
       1: '0x8d18f76d1F87A7347A74f957052f414472945BE4',
-      3: '0x2d19a1cdb141df4c800b4ffeb466042e6a25c524',
+      3: '0xca7d0b04266a9ff3fc2d43f0abbd30091b11bdd0',
     },
     name: 'Kompass Soju ',
     symbol: 'KOMP-ETH UNI-V2 LP',
     tokenSymbol: 'KOMP',
-    icon: 'soju',
+    icon: 'bottle',
   },
 ]
