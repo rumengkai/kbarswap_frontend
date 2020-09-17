@@ -16,7 +16,7 @@
   "MyAccount": "내 계정",
   "SOJUBalance": "소주  잔액",
   "ViewEtherscan": "이더스캔에서 보기",
-  "Signout": "Sign out",
+  "Signout": "Sig out",
   "SelectDrink": "좋아하는 음료를 고르세요.",
   "EarnSOJU": "Uniswap V2 LP 토큰을 스테이킹해 소주 토큰을 획득하세요.",
   "DepositSymbol": "{symbol} 넣고 SOJU 벌기",
@@ -36,7 +36,7 @@
   "Confirm": "확인",
   "Deposit": "{tokenName} 토큰 입금하기",
   "Every": "LP 토큰을 스테이킹하거나 언스테이킹할 때마다 컨트랙트에서 자동으로 SOJU를 보상으로 수확합니다.",
-  "UnlockWallet": "Unlock Wallet",
-  "PendingConfirmation" :"Pending Confirmation",
-  "SelectWallet":"Select a wallet provider."
+  "UnlockWallet": "지갑 열기",
+  "PendingConfirmation" :"거래 확인 중",
+  "SelectWallet":"지갑 선택."
 }
