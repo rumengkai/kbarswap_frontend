@@ -15,12 +15,60 @@ import theme from './theme'
 // import Home from './views/Home'
 // import Stake from './views/Stake'
 
+import http from "axios"
+import intl from 'react-intl-universal';
+
+require("intl/locale-data/jsonp/en.js")
+require("intl/locale-data/jsonp/zh.js")
+const SUPPOER_LOCALES = [
+  {
+    name: "English",
+    value: "en-US"
+  },
+  {
+    name: "简体中文",
+    value: "zh-CN"
+  }
+]
+
+
 const Farms = lazy(() => import('./views/Farms'/* webpackChunkName: "Farms" */));
 const Home = lazy(() => import('./views/Home'/* webpackChunkName: "Home" */));
 const Stake = lazy(() => import('./views/Stake'/* webpackChunkName: "Stake" */));
 
 const App: React.FC = () => {
   const [mobileMenu, setMobileMenu] = useState(false)
+  const [initDone, setInitDone] = useState(false)
+
+  useEffect(() => {
+    loadLocales()
+  }, [])
+
+  const loadLocales = () => {
+    let currentLocale = intl.determineLocale({
+      urlLocaleKey: "lang",
+      cookieLocaleKey: "lang"
+    })
+
+    if (!SUPPOER_LOCALES.find(e => e.value === currentLocale)) {
+      currentLocale = "en-US"
+    }
+
+    http.get(`locales/${currentLocale}.json`).then(res => {
+      console.log("App locale data", res.data)
+      // init method will load CLDR locale data according to currentLocale
+      return intl.init({
+        currentLocale,
+        locales: {
+          [currentLocale]: res.data
+        }
+      })
+    }).then(() => {
+      // After loading CLDR locale data, start to render
+      setInitDone(true)
+    })
+  }
+  
 
   const handleDismissMobileMenu = useCallback(() => {
     setMobileMenu(false)
@@ -42,14 +90,14 @@ const App: React.FC = () => {
             </Suspense>
           </Route>
           <Route path="/farms">
-             <Suspense fallback={<div></div>}>
-                <Farms />
-             </Suspense>
+            <Suspense fallback={<div></div>}>
+              <Farms />
+            </Suspense>
           </Route>
           <Route path="/staking">
-             <Suspense fallback={<div></div>}>
-                <Stake />
-             </Suspense>
+            <Suspense fallback={<div></div>}>
+              <Stake />
+            </Suspense>
           </Route>
         </Switch>
       </Router>

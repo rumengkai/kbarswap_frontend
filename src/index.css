@@ -17,3 +17,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+select:focus {
+  outline: none;
+}
+select {
+  margin-right: 20px;
+  font-size: 16px;
+  line-height: 20px;
+}
+option{
+  color: black;
+  background: #A6E1EC;
+  line-height: 20px;
+}
+option:hover{
+  background: #EBCCD1;
+}

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import chef from '../../assets/img/chef.png'
 import Button from '../../components/Button'
@@ -8,6 +8,7 @@ import PageHeader from '../../components/PageHeader'
 import Spacer from '../../components/Spacer'
 import Balances from './components/Balances'
 import { timeStamp } from 'console'
+import intl from 'react-intl-universal'
 
 const Home: React.FC = () => {
   // 是否有KBAR-ETH池子
@@ -25,8 +26,8 @@ const Home: React.FC = () => {
     <Page>
       <PageHeader
         icon={<img src={chef} height={120} />}
-        title="Your Sommelier is ready"
-        subtitle="Stake UniSwap LP tokens to claim your very own yummy KBAR!"
+        title={intl.get("title")}
+        subtitle={intl.get("subtitle")}
       />
 
       <Container>
