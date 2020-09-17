@@ -97,7 +97,7 @@ const Balances: React.FC = () => {
               <div style={{ flex: 1 }}>
                 <Label text={intl.get('YourSOJU')} />
                 <Value
-                  value={!!account ? getBalanceNumber(sojuBalance) : 'Locked'}
+                  value={!!account ? getBalanceNumber(sojuBalance) : intl.get('Locked')}
                 />
               </div>
             </StyledBalance>
@@ -116,7 +116,7 @@ const Balances: React.FC = () => {
         <CardContent>
           <Label text={intl.get('TotalSOJU')} />
           <Value
-            value={totalSupply ? getBalanceNumber(totalSupply) : 'Locked'}
+            value={totalSupply ? getBalanceNumber(totalSupply) : intl.get('Locked')}
           />
         </CardContent>
         <Footnote>

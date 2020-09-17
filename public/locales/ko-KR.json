@@ -37,9 +37,11 @@
   "Deposit": "{tokenName} 토큰 입금하기",
   "Every": "LP 토큰을 스테이킹하거나 언스테이킹할 때마다 컨트랙트에서 자동으로 SOJU를 보상으로 수확합니다.",
   "UnlockWallet": "지갑 열기",
-  "PendingConfirmation" :"거래 확인 중",
-  "SelectWallet":"지갑 선택.",
-  "Loading":"로딩",
-  "Deposit_text":"디파짓",
-  "Earn":"수확"
+  "PendingConfirmation": "거래 확인 중",
+  "SelectWallet": "지갑 선택.",
+  "Loading": "로딩",
+  "Deposit_text": "디파짓",
+  "Earn": "수확",
+  "Locked": "잠금",
+  "Connect": "연결"
 }

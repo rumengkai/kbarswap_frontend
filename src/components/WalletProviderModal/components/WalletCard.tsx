@@ -5,6 +5,7 @@ import CardContent from '../../CardContent'
 import CardIcon from '../../CardIcon'
 import CardTitle from '../../CardTitle'
 import Spacer from '../../Spacer'
+import intl from 'react-intl-universal'
 
 interface WalletCardProps {
   icon: React.ReactNode
@@ -18,7 +19,7 @@ const WalletCard: React.FC<WalletCardProps> = ({ icon, onConnect, title }) => (
       <CardIcon>{icon}</CardIcon>
       <CardTitle text={title} />
       <Spacer />
-      <Button onClick={onConnect} text="Connect" />
+      <Button onClick={onConnect} text={intl.get('Connect')} />
     </CardContent>
   </Card>
 )

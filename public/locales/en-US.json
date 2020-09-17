@@ -41,5 +41,7 @@
   "SelectWallet": "Select a wallet provider.",
   "Loading": "Loading",
   "Deposit_text": "Deposit",
-  "Earn": "Earn"
+  "Earn": "Earn",
+  "Locked": "Locked",
+  "Connect": "Connect"
 }
