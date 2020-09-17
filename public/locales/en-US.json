@@ -37,6 +37,9 @@
   "Deposit": "Deposit {tokenName} Tokens",
   "Every": "Every time you stake and unstake LP tokens, the contract will automagically harvest SOJU rewards for you!",
   "UnlockWallet": "Unlock Wallet",
-  "PendingConfirmation" :"Pending Confirmation",
-  "SelectWallet":"Select a wallet provider."
+  "PendingConfirmation": "Pending Confirmation",
+  "SelectWallet": "Select a wallet provider.",
+  "Loading": "Loading",
+  "Deposit_text": "Deposit",
+  "Earn": "Earn"
 }

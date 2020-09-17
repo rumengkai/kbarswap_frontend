@@ -121,7 +121,7 @@ const Balances: React.FC = () => {
         </CardContent>
         <Footnote>
           {intl.get('NewRewards')}
-          <FootnoteValue>1,000 SOJU</FootnoteValue>
+          <FootnoteValue>2 SOJU</FootnoteValue>
         </Footnote>
       </Card>
     </StyledWrapper>

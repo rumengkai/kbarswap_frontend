@@ -168,10 +168,10 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm }) => {
         <CardContent>
           <StyledContent>
             <CardIcon><img src={iconFun(farm.icon)} style={{ width: '40px', height: '40px' }} /></CardIcon>
-            <StyledTitle>{intl.get(farm.name)?intl.get(farm.name):farm.name}</StyledTitle>
+            <StyledTitle>{intl.get(farm.name) ? intl.get(farm.name) : farm.name}</StyledTitle>
             <StyledDetails>
-              <StyledDetail>Deposit {farm.lpToken.toUpperCase()}</StyledDetail>
-              <StyledDetail>Earn {farm.earnToken.toUpperCase()}</StyledDetail>
+              <StyledDetail>{intl.get('Deposit_text')} {farm.lpToken.toUpperCase()}</StyledDetail>
+              <StyledDetail>{intl.get('Earn')} {farm.earnToken.toUpperCase()}</StyledDetail>
             </StyledDetails>
             <Spacer />
             <Button
@@ -195,7 +195,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm }) => {
                     .toNumber()
                     .toLocaleString('en-US')
                     .slice(0, -1)}%`
-                  : 'Loading ...'}
+                  : intl.get("Loading") + ' ...'}
               </span>
               {/* <span>
                 {farm.tokenAmount

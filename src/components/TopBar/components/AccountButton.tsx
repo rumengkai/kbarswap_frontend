@@ -5,6 +5,7 @@ import useModal from '../../../hooks/useModal'
 import Button from '../../Button'
 import WalletProviderModal from '../../WalletProviderModal'
 import AccountModal from './AccountModal'
+import intl from 'react-intl-universal'
 
 interface AccountButtonProps { }
 
@@ -24,9 +25,9 @@ const AccountButton: React.FC<AccountButtonProps> = (props) => {
   return (
     <StyledAccountButton>
       {!account ? (
-        <Button onClick={handleUnlockClick} size="sm" text="Unlock Wallet" />
+        <Button onClick={handleUnlockClick} size="sm" text={intl.get('UnlockWallet')} />
       ) : (
-          <Button onClick={onPresentAccountModal} size="sm" text="My Wallet" />
+          <Button onClick={onPresentAccountModal} size="sm" text={intl.get('UnlockWallet')} />
         )}
     </StyledAccountButton>
   )
