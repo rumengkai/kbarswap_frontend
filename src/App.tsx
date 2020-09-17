@@ -19,15 +19,16 @@ import http from "axios"
 import intl from 'react-intl-universal';
 
 require("intl/locale-data/jsonp/en.js")
-require("intl/locale-data/jsonp/zh.js")
+require("intl/locale-data/jsonp/ko.js")
+
 const SUPPOER_LOCALES = [
   {
     name: "English",
     value: "en-US"
   },
   {
-    name: "简体中文",
-    value: "zh-CN"
+    name: "한국어.",
+    value: "ko-KR"
   }
 ]
 
@@ -79,7 +80,7 @@ const App: React.FC = () => {
   }, [setMobileMenu])
 
   return (
-    <Providers>
+    initDone&&<Providers>
       <Router>
         <TopBar onPresentMobileMenu={handlePresentMobileMenu} />
         <MobileMenu onDismiss={handleDismissMobileMenu} visible={mobileMenu} />

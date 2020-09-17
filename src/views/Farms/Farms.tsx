@@ -15,6 +15,7 @@ import useModal from '../../hooks/useModal'
 import Farm from '../Farm'
 
 import FarmCards from './components/FarmCards'
+import intl from 'react-intl-universal'
 
 const Farms: React.FC = () => {
   const { path } = useRouteMatch()
@@ -28,8 +29,8 @@ const Farms: React.FC = () => {
             <Route exact path={path}>
               <PageHeader
                 icon={<img src={chef} height="120" />}
-                subtitle="Earn KBAR tokens by staking Uniswap V2 LP Tokens."
-                title="Select Your Favorite Drink"
+                subtitle={intl.get('EarnSOJU')}
+                title={intl.get('SelectDrink')}
               />
               <FarmCards />
             </Route>
@@ -49,7 +50,7 @@ const Farms: React.FC = () => {
               <ButtonWarp>
                 <Button
                   onClick={onPresentWalletProviderModal}
-                  text="🔓 Unlock Wallet"
+                  text={'🔓 ' + intl.get('UnlockWallet')}
                 />
               </ButtonWarp>
             </div>

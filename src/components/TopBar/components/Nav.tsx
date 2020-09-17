@@ -1,24 +1,25 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
+import intl from 'react-intl-universal';
 
 const Nav: React.FC = () => {
   return (
     <StyledNav>
       <StyledLink exact activeClassName="active" to="/">
-        Home
+        {intl.get("Home")}
       </StyledLink>
       <StyledLink exact activeClassName="active" to="/farms">
-        Menu
+        {intl.get("Menu")}
       </StyledLink>
       {/* <StyledLink exact activeClassName="active" to="/staking">
         Staking
       </StyledLink> */}
       <StyledAbsoluteLink
-        href="https://medium.com/kbarswap/the-kbarswap-project-c4049ea9941e"
+        href="https://medium.com/SojuSwap/the-SojuSwap-project-c4049ea9941e"
         target="_blank"
       >
-        About
+        {intl.get("About")}
       </StyledAbsoluteLink>
     </StyledNav>
   )

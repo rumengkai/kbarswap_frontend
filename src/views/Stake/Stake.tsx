@@ -21,6 +21,7 @@ import { getSommelierContract } from '../../kbar/utils'
 
 import Harvest from './components/Harvest'
 import Stake from './components/Stake'
+import intl from 'react-intl-universal'
 
 const Farm: React.FC = () => {
   const { account } = useWallet()
@@ -54,7 +55,7 @@ const Farm: React.FC = () => {
           <PageHeader
             icon={<img src={chef} height="120" />}
             title="Stake Kbar Tokens & Earn Fees"
-            subtitle="0.05% of all KbarSwap trades are rewarded to KBAR stakers"
+            subtitle="0.05% of all SojuSwap trades are rewarded to SOJU stakers"
           />
           {/* <FarmCards /> */}
           <div>TBD</div>
@@ -70,7 +71,7 @@ const Farm: React.FC = () => {
           >
             <Button
               onClick={onPresentWalletProviderModal}
-              text="🔓 Unlock Wallet"
+              text={'🔓 ' + intl.get('UnlockWallet')}
             />
           </div>
         )}

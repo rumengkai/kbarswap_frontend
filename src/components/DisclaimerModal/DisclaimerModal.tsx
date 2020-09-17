@@ -44,9 +44,9 @@ const DisclaimerModal: React.FC<DisclaimerModal> = ({
     } else {
       return (
         <div>
-          <p>Attention KBAR Uniswap LPs</p>
+          <p>Attention SOJU Uniswap LPs</p>
           <p>
-            The only Uniswap pool that is compatible with KBAR is KBAR/yCRV
+            The only Uniswap pool that is compatible with SOJU is SOJU/yCRV
             (Curve yPool tokens)
           </p>
           <p>Providing liquidity for other Uniswap pools is dangerous</p>

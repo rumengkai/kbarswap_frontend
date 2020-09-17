@@ -17,8 +17,8 @@ const SUPPOER_LOCALES = [
     value: "en-US"
   },
   {
-    name: "简体中文",
-    value: "zh-CN"
+    name: "한국어.",
+    value: "ko-KR"
   }
 ]
 const TopBar: React.FC<TopBarProps> = ({ onPresentMobileMenu }) => {

@@ -6,6 +6,7 @@ import ModalActions from '../../../components/ModalActions'
 import ModalTitle from '../../../components/ModalTitle'
 import TokenInput from '../../../components/TokenInput'
 import { getFullDisplayBalance } from '../../../utils/formatBalance'
+import intl from 'react-intl-universal'
 
 interface DepositModalProps extends ModalProps {
   max: BigNumber
@@ -39,7 +40,7 @@ const DepositModal: React.FC<DepositModalProps> = ({
 
   return (
     <Modal>
-      <ModalTitle text={`Deposit ${tokenName} Tokens`} />
+      <ModalTitle text={intl.get('Deposit', {tokenName:tokenName})} />
       <TokenInput
         value={val}
         onSelectMax={handleSelectMax}
@@ -48,10 +49,10 @@ const DepositModal: React.FC<DepositModalProps> = ({
         symbol={tokenName}
       />
       <ModalActions>
-        <Button text="Cancel" variant="secondary" onClick={onDismiss} />
+        <Button text={intl.get('Cancel')} variant="secondary" onClick={onDismiss} />
         <Button
           disabled={pendingTx}
-          text={pendingTx ? 'Pending Confirmation' : 'Confirm'}
+          text={pendingTx ? intl.get('PendingConfirmation') : intl.get('Confirm')}
           onClick={async () => {
             setPendingTx(true)
             await onConfirm(val)

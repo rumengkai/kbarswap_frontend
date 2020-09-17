@@ -78,7 +78,7 @@
     "start": "node scripts/start.js",
     "build": "CI= GENERATE_SOURCEMAP=false node scripts/build.js",
     "test": "node scripts/test.js",
-    "deploy": "yarn build && cp ./build/index.html ./build/200.html && surge ./build kbarswap.org"
+    "deploy": "yarn build && cp ./build/index.html ./build/200.html && surge ./build SojuSwap.org"
   },
   "eslintConfig": {
     "extends": "react-app"

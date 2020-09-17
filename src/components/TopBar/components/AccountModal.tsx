@@ -15,6 +15,7 @@ import ModalTitle from '../../ModalTitle'
 import Spacer from '../../Spacer'
 import Value from '../../Value'
 import soju from '../../../assets/icon/soju.png'
+import intl from 'react-intl-universal'
 
 const AccountModal: React.FC<ModalProps> = ({ onDismiss }) => {
   const { account, reset } = useWallet()
@@ -29,7 +30,7 @@ const AccountModal: React.FC<ModalProps> = ({ onDismiss }) => {
 
   return (
     <Modal>
-      <ModalTitle text="My Account" />
+      <ModalTitle text={intl.get('MyAccount')} />
       <ModalContent>
         <Spacer />
 
@@ -40,7 +41,7 @@ const AccountModal: React.FC<ModalProps> = ({ onDismiss }) => {
             </CardIcon>
             <StyledBalance>
               <Value value={getBalanceNumber(kbarBalance)} />
-              <Label text="KBAR Balance" />
+              <Label text={intl.get('SOJUBalance')} />
             </StyledBalance>
           </StyledBalanceWrapper>
         </div>
@@ -48,18 +49,18 @@ const AccountModal: React.FC<ModalProps> = ({ onDismiss }) => {
         <Spacer />
         <Button
           href={`https://etherscan.io/address/${account}`}
-          text="View on Etherscan"
+          text={intl.get('ViewEtherscan')}
           variant="secondary"
         />
         <Spacer />
         <Button
           onClick={handleSignOutClick}
-          text="Sign out"
+          text={intl.get('Signout')}
           variant="secondary"
         />
       </ModalContent>
       <ModalActions>
-        <Button onClick={onDismiss} text="Cancel" />
+        <Button onClick={onDismiss} text={intl.get('Cancel')} />
       </ModalActions>
     </Modal>
   )

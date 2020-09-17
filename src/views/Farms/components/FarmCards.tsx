@@ -25,6 +25,7 @@ import soju from '../../../assets/icon/soju.png'
 import tropical from '../../../assets/icon/tropical.png'
 import tumbler from '../../../assets/icon/tumbler.png'
 import wine from '../../../assets/icon/wine.png'
+import intl from 'react-intl-universal';
 
 interface FarmWithStakedValue extends Farm, StakedValue {
   apy: BigNumber
@@ -36,7 +37,7 @@ const FarmCards: React.FC = () => {
   const stakedValue = useAllStakedValue()
 
   const kbarIndex = farms.findIndex(
-    ({ tokenSymbol }) => tokenSymbol === 'KBAR',
+    ({ tokenSymbol }) => tokenSymbol === 'SOJU',
   )
 
   const kbarPrice =
@@ -45,7 +46,7 @@ const FarmCards: React.FC = () => {
       : new BigNumber(0)
 
   const BLOCKS_PER_YEAR = new BigNumber(2336000)
-  const KBAR_PER_BLOCK = new BigNumber(1000)
+  const SOJU_PER_BLOCK = new BigNumber(1000)
 
   const rows = farms.reduce<FarmWithStakedValue[][]>(
     (farmRows, farm, i) => {
@@ -54,7 +55,7 @@ const FarmCards: React.FC = () => {
         ...stakedValue[i],
         apy: stakedValue[i]
           ? kbarPrice
-            .times(KBAR_PER_BLOCK)
+            .times(SOJU_PER_BLOCK)
             .times(BLOCKS_PER_YEAR)
             .times(stakedValue[i].poolWeight)
             .div(stakedValue[i].totalWethValue)
@@ -156,14 +157,18 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm }) => {
         return 'icon'
     }
   }
+  let currentLocale = intl.determineLocale({
+    urlLocaleKey: "lang",
+    cookieLocaleKey: "lang"
+  })
   return (
     <StyledCardWrapper>
-      {farm.tokenSymbol === 'KBAR' && <StyledCardAccent />}
+      {farm.tokenSymbol === 'SOJU' && <StyledCardAccent />}
       <Card>
         <CardContent>
           <StyledContent>
             <CardIcon><img src={iconFun(farm.icon)} style={{ width: '40px', height: '40px' }} /></CardIcon>
-            <StyledTitle>{farm.name}</StyledTitle>
+            <StyledTitle>{intl.get(farm.name)}</StyledTitle>
             <StyledDetails>
               <StyledDetail>Deposit {farm.lpToken.toUpperCase()}</StyledDetail>
               <StyledDetail>Earn {farm.earnToken.toUpperCase()}</StyledDetail>
@@ -171,7 +176,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm }) => {
             <Spacer />
             <Button
               disabled={!poolActive}
-              text={poolActive ? 'Select' : undefined}
+              text={poolActive ? intl.get('Select') : undefined}
               to={`/farms/${farm.id}`}
             >
               {!poolActive && (

@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { contractAddresses } from '../../../kbar/lib/constants'
+import intl from 'react-intl-universal'
 
 const Nav: React.FC = () => {
   const ContractUrl = () => {
@@ -8,20 +9,19 @@ const Nav: React.FC = () => {
   }
   return (
     <StyledNav>
-      {/* KbarSwap Contract  Github  Twitter  Medium   Telegram  Discord */}
       <StyledLink
         target="_blank"
         href={ContractUrl()}
       >
-        KbarSwap Contract
+        {intl.get('SojuSwapContract')}
       </StyledLink>
-      <StyledLink target="_blank" href="https://github.com/kbarswap">
+      <StyledLink target="_blank" href="https://github.com/SojuSwap">
         Github
       </StyledLink>
       <StyledLink target="_blank" href="#">
         Twitter
       </StyledLink>
-      <StyledLink target="_blank" href="https://twitter.com/kbarswap">
+      <StyledLink target="_blank" href="https://twitter.com/SojuSwap">
         Medium
       </StyledLink>
       <StyledLink target="_blank" href="#">

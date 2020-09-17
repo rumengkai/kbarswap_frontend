@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import Button from '../Button'
 import Input, { InputProps } from '../Input'
+import intl from 'react-intl-universal'
 
 interface TokenInputProps extends InputProps {
   max: number | string,
@@ -26,7 +27,7 @@ const TokenInput: React.FC<TokenInputProps> = ({
             <StyledTokenSymbol>{symbol}</StyledTokenSymbol>
             <StyledSpacer />
             <div>
-              <Button size="sm" text="Max" onClick={onSelectMax} />
+              <Button size="sm" text={intl.get('Max')} onClick={onSelectMax} />
             </div>
           </StyledTokenAdornmentWrapper>
         )}

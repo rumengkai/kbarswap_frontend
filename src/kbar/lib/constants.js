@@ -35,7 +35,7 @@ export const addressMap = {
   //SNX: '0xC011a73ee8576Fb46F5E1c5751cA3B9Fe0af2a6F',
   //COMP: '0xc00e94Cb662C3520282E6f5717214004A7f26888',
   //LEND: '0x80fB784B7eD66730e8b1DBd9820aFD29931aab03',
-  //KBARYCRV: '0x2C7a51A357d5739C5C74Bf3C96816849d2c9F726',
+  //SOJUYCRV: '0x2C7a51A357d5739C5C74Bf3C96816849d2c9F726',
 }
 
 // weth:{
@@ -61,7 +61,7 @@ UNI-V2 LP Address on mainnet for reference
 9  BAND 0xf421c3f2e695c2d4c0765379ccace8ade4a480d9
 10 AMPL 0xc5be99a02c6857f9eac67bbce58df5572498f40c
 11 YFI  0x2fdbadf3c4d5a8666bc06645b8358ab803996e28
-12 KBAR 0xce84867c3c02b05dc570d0135103d3fb9cc19433
+12 SOJU 0xce84867c3c02b05dc570d0135103d3fb9cc19433
 */
 
 export const contractAddresses = {
@@ -94,262 +94,28 @@ export const supportedPools = [
       1: contractAddresses.kbar[1],
       3: contractAddresses.kbar[3],
     },
-    name: 'KBAR Party!',
-    symbol: 'KBAR-ETH UNI-V2 LP',
-    tokenSymbol: 'KBAR',
+    name: 'SOJUParty',
+    symbol: 'SOJU-ETH UNI-V2 LP',
+    tokenSymbol: 'SOJU',
     icon: 'bottle',
   },
-  {
-    pid: 0,
-    lpAddresses: {
-      1: '0x0a24adf229e7b3271d314aa934749dd454029959',
-      3: '0x15c3c4147a862bbb56b46806a94719d72da410dd',
-    },
-    tokenAddresses: {
-      1: '0x8d18f76d1F87A7347A74f957052f414472945BE4',
-      3: '0x2d19a1cdb141df4c800b4ffeb466042e6a25c524',
-    },
-    name: 'Kompass Soju ',
-    symbol: 'KOMP-ETH UNI-V2 LP',
-    tokenSymbol: 'KOMP',
-    icon: 'soju',
-  },
   // {
-  //   pid: 12,
+  //   pid: 0,
   //   lpAddresses: {
-  //     1: '0x0d4a11d5eeaac28ec3f61d100daf4d40471f1852',
-  //     3: '0x0d4a11d5eeaac28ec3f61d100daf4d40471f1852',
+  //     1: '0x0a24adf229e7b3271d314aa934749dd454029959',
+  //     3: '0x15c3c4147a862bbb56b46806a94719d72da410dd',
   //   },
   //   tokenAddresses: {
-  //     1: '0xdac17f958d2ee523a2206206994597c13d831ec7',
-  //     3: '0xdac17f958d2ee523a2206206994597c13d831ec7',
+  //     1: '0x8d18f76d1F87A7347A74f957052f414472945BE4',
+  //     3: '0x2d19a1cdb141df4c800b4ffeb466042e6a25c524',
   //   },
-  //   name: 'Tether Beer',
-  //   symbol: 'USDT-ETH UNI-V2 LP',
-  //   tokenSymbol: 'USDT',
-  //   icon: '🍺',
-  // },
-  // {
-  // {
-  //   pid: 2,
-  //   lpAddresses: {
-  //     1: '0xa478c2975ab1ea89e8196811f51a7b7ade33eb11',
-  //     3: '0xa478c2975ab1ea89e8196811f51a7b7ade33eb11',
+  //   name: 'Kompass Soju ',
+  //   name: {
+  //     'en-US': 'Kompass Soju ',
+  //     'ko-KR': '소주 파티!',
   //   },
-  //   tokenAddresses: {
-  //     1: '0x6b175474e89094c44da98b954eedeac495271d0f',
-  //     3: '0x6b175474e89094c44da98b954eedeac495271d0f',
-  //   },
-  //   name: 'Donald DAI',
-  //   symbol: 'DAI-ETH UNI-V2 LP',
-  //   tokenSymbol: 'DAI',
-  //   icon: '🍻',
-  // },
-  // {
-  //   pid: 3,
-  //   lpAddresses: {
-  //     1: '0xf80758ab42c3b07da84053fd88804bcb6baa4b5c',
-  //     3: '0xf80758ab42c3b07da84053fd88804bcb6baa4b5c',
-  //   },
-  //   tokenAddresses: {
-  //     1: '0x57ab1ec28d129707052df4df418d58a2d46d5f51',
-  //     3: '0x57ab1ec28d129707052df4df418d58a2d46d5f51',
-  //   },
-  //   name: 'Spartan Dollar',
-  //   symbol: 'SUSD-ETH UNI-V2 LP',
-  //   tokenSymbol: 'SUSD',
-  //   icon: '🥂',
-  // },
-  // {
-  //   pid: 7,
-  //   lpAddresses: {
-  //     1: '0x88d97d199b9ed37c29d846d00d443de980832a22',
-  //     3: '0x88d97d199b9ed37c29d846d00d443de980832a22',
-  //   },
-  //   tokenAddresses: {
-  //     1: '0x04fa0d235c4abf4bcf4787af4cf447de572ef828',
-  //     3: '0x04fa0d235c4abf4bcf4787af4cf447de572ef828',
-  //   },
-  //   name: 'Umami Wine',
-  //   symbol: 'UMA-ETH UNI-V2 LP',
-  //   tokenSymbol: 'UMA',
-  //   icon: '🍷',
-  // },
-  // {
-  //   pid: 9,
-  //   lpAddresses: {
-  //     1: '0xf421c3f2e695c2d4c0765379ccace8ade4a480d9',
-  //     3: '0xf421c3f2e695c2d4c0765379ccace8ade4a480d9',
-  //   },
-  //   tokenAddresses: {
-  //     1: '0xba11d00c5f74255f56a5e366f4f77f5a186d7f55',
-  //     3: '0xba11d00c5f74255f56a5e366f4f77f5a186d7f55',
-  //   },
-  //   name: 'Band-osaurus',
-  //   symbol: 'BAND-ETH UNI-V2 LP',
-  //   tokenSymbol: 'BAND',
-  //   icon: '🥃',
-  // },
-  // {
-  //   pid: 8,
-  //   lpAddresses: {
-  //     1: '0xa2107fa5b38d9bbd2c461d6edf11b11a50f6b974',
-  //     3: '0xa2107fa5b38d9bbd2c461d6edf11b11a50f6b974',
-  //   },
-  //   tokenAddresses: {
-  //     1: '0x514910771af9ca656af840dff83e8264ecf986ca',
-  //     3: '0x514910771af9ca656af840dff83e8264ecf986ca',
-  //   },
-  //   name: 'Toadie Cocktail',
-  //   symbol: 'LINK-ETH UNI-V2 LP',
-  //   tokenSymbol: 'LINK',
-  //   icon: '🍸',
-  // },
-  // {
-  //   pid: 10,
-  //   lpAddresses: {
-  //     1: '0xc5be99a02c6857f9eac67bbce58df5572498f40c',
-  //     3: '0xc5be99a02c6857f9eac67bbce58df5572498f40c',
-  //   },
-  //   tokenAddresses: {
-  //     1: '0xd46ba6d942050d489dbd938a2c909a5d5039a161',
-  //     3: '0xd46ba6d942050d489dbd938a2c909a5d5039a161',
-  //   },
-  //   name: 'Ample Chicks',
-  //   symbol: 'AMPL-ETH UNI-V2 LP',
-  //   tokenSymbol: 'AMPL',
-  //   icon: '🍹',
-  // },
-
-  // {
-  //   pid: 4,
-  //   lpAddresses: {
-  //     1: '0xcffdded873554f362ac02f8fb1f02e5ada10516f',
-  //   },
-  //   tokenAddresses: {
-  //     1: '0xc00e94cb662c3520282e6f5717214004a7f26888',
-  //   },
-  //   name: 'Compound Truffle',
-  //   symbol: 'COMP-ETH UNI-V2 LP',
-  //   tokenSymbol: 'COMP',
-  //   icon: '🧉',
-  // },
-  // {
-  //   pid: 5,
-  //   lpAddresses: {
-  //     1: '0xab3f9bf1d81ddb224a2014e98b238638824bcf20',
-  //   },
-  //   tokenAddresses: {
-  //     1: '0x80fb784b7ed66730e8b1dbd9820afd29931aab03',
-  //   },
-  //   name: 'Aave Boar',
-  //   symbol: 'LEND-ETH UNI-V2 LP',
-  //   tokenSymbol: 'LEND',
-  //   icon: '🍾',
-  // },
-  // {
-  //   pid: 6,
-  //   lpAddresses: {
-  //     1: '0x43ae24960e5534731fc831386c07755a2dc33d47',
-  //   },
-  //   tokenAddresses: {
-  //     1: '0xc011a73ee8576fb46f5e1c5751ca3b9fe0af2a6f',
-  //   },
-  //   name: 'Synthetic Snake',
-  //   symbol: 'SNX-ETH UNI-V2 LP',
-  //   tokenSymbol: 'SNX',
-  //   icon: '🐍',
-  // },
-  // {
-  //   pid: 11,
-  //   lpAddresses: {
-  //     1: '0x2fdbadf3c4d5a8666bc06645b8358ab803996e28',
-  //   },
-  //   tokenAddresses: {
-  //     1: '0x0bc529c00c6401aef6d220be8c6ea1667f6ad93e',
-  //   },
-  //   name: 'YFI Whale',
-  //   symbol: 'YFI-ETH UNI-V2 LP',
-  //   tokenSymbol: 'YFI',
-  //   icon: '🐋',
-  // },
-  // {
-  //   pid: 13,
-  //   lpAddresses: {
-  //     1: '0x8bd1661da98ebdd3bd080f0be4e6d9be8ce9858c',
-  //   },
-  //   tokenAddresses: {
-  //     1: '0x408e41876cccdc0f92210600ef50372656052a38',
-  //   },
-  //   name: 'REN Rhino',
-  //   symbol: 'REN-ETH UNI-V2 LP',
-  //   tokenSymbol: 'REN',
-  //   icon: '🦏',
-  // },
-  // {
-  //   pid: 14,
-  //   lpAddresses: {
-  //     1: '0xaad22f5543fcdaa694b68f94be177b561836ae57',
-  //   },
-  //   tokenAddresses: {
-  //     1: '0x68A118Ef45063051Eac49c7e647CE5Ace48a68a5',
-  //   },
-  //   name: 'BASED Bull',
-  //   symbol: 'BASE-sUSD UNI-V2 LP',
-  //   tokenSymbol: 'BASED',
-  //   icon: '🐂',
-  // },
-  // {
-  //   pid: 15,
-  //   lpAddresses: {
-  //     1: '0xcc3d1ecef1f9fd25599dbea2755019dc09db3c54',
-  //   },
-  //   tokenAddresses: {
-  //     1: '0x476c5E26a75bd202a9683ffD34359C0CC15be0fF',
-  //   },
-  //   name: 'SRM Shark',
-  //   symbol: 'SRM-ETH UNI-V2 LP',
-  //   tokenSymbol: 'SRM',
-  //   icon: '🦈',
-  // },
-  // {
-  //   pid: 16,
-  //   lpAddresses: {
-  //     1: '0xa5904961f61bae7c4dd8478077556c91bf291cfd',
-  //   },
-  //   tokenAddresses: {
-  //     1: '0xaba8cac6866b83ae4eec97dd07ed254282f6ad8a',
-  //   },
-  //   name: 'KBARv2 KBAR',
-  //   symbol: 'KBARv2-ETH UNI-V2 LP',
-  //   tokenSymbol: 'KBARv2',
-  //   icon: '🍠',
-  // },
-  // {
-  //   pid: 17,
-  //   lpAddresses: {
-  //     1: '0x3da1313ae46132a397d90d95b1424a9a7e3e0fce',
-  //   },
-  //   tokenAddresses: {
-  //     1: '0xD533a949740bb3306d119CC777fa900bA034cd52',
-  //   },
-  //   name: 'CRV Crocodile',
-  //   symbol: 'CRV-ETH UNI-V2 LP',
-  //   tokenSymbol: 'CRV',
-  //   icon: '🐊',
-  // },
-  //   pid: 1,
-  //   lpAddresses: {
-  //     1: '0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc',
-  //     3: '0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc',
-  //   },
-  //   tokenAddresses: {
-  //     1: '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
-  //     3: '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
-  //   },
-  //   name: 'Circle Beer',
-  //   symbol: 'USDC-ETH UNI-V2 LP',
-  //   tokenSymbol: 'USDC',
-  //   icon: '🍺',
+  //   symbol: 'KOMP-ETH UNI-V2 LP',
+  //   tokenSymbol: 'KOMP',
+  //   icon: 'soju',
   // },
 ]

@@ -12,6 +12,7 @@ import { getSommelierContract } from '../../kbar/utils'
 import { getContract } from '../../utils/erc20'
 import Harvest from './components/Harvest'
 import Stake from './components/Stake'
+import intl from 'react-intl-universal';
 
 const Farm: React.FC = () => {
   const { farmId } = useParams()
@@ -58,7 +59,8 @@ const Farm: React.FC = () => {
     <>
       <PageHeader
         icon={icon}
-        subtitle={`Deposit ${lpTokenName}  Tokens and earn ${earnTokenName}`}
+        // subtitle={`Deposit ${lpTokenName}  Tokens and earn ${earnTokenName}`}
+        subtitle={intl.get('DepositTokens',{lpTokenName:lpTokenName,earnTokenName:earnTokenName})}
         title={name}
       />
       <StyledFarm>
@@ -77,8 +79,7 @@ const Farm: React.FC = () => {
         </StyledCardsWrapper>
         <Spacer size="lg" />
         <StyledInfo>
-          ⭐️ Every time you stake and unstake LP tokens, the contract will
-          automagically harvest KBAR rewards for you!
+          ⭐️ {intl.get('Every')}
         </StyledInfo>
         <Spacer size="lg" />
       </StyledFarm>

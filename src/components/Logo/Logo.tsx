@@ -2,14 +2,14 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import chef from '../../assets/img/chef.png'
+import intl from 'react-intl-universal'
 
 const Logo: React.FC = () => {
   return (
     <StyledLogo to="/">
       <img src={chef} height="32" style={{ marginTop: -4 }} />
       <StyledText>
-        {/* KbarSwap <SommelierText>Sommelier</SommelierText> */}
-        KbarSwap <SommelierText>Sommelier</SommelierText>
+        {intl.get("SojuSwap")} <SommelierText>{intl.get("Sommelier")}</SommelierText>
       </StyledText>
     </StyledLogo>
   )

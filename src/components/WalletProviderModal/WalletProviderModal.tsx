@@ -13,6 +13,7 @@ import ModalTitle from '../ModalTitle'
 import Spacer from '../Spacer'
 
 import WalletCard from './components/WalletCard'
+import intl from 'react-intl-universal'
 
 const WalletProviderModal: React.FC<ModalProps> = ({ onDismiss }) => {
   const { account, connect } = useWallet()
@@ -25,7 +26,7 @@ const WalletProviderModal: React.FC<ModalProps> = ({ onDismiss }) => {
 
   return (
     <Modal>
-      <ModalTitle text="Select a wallet provider." />
+      <ModalTitle text={intl.get('SelectWallet')} />
 
       <ModalContent>
         <StyledWalletsWrapper>
@@ -48,7 +49,7 @@ const WalletProviderModal: React.FC<ModalProps> = ({ onDismiss }) => {
       </ModalContent>
 
       <ModalActions>
-        <Button text="Cancel" variant="secondary" onClick={onDismiss} />
+        <Button text={intl.get('Cancel')} variant="secondary" onClick={onDismiss} />
       </ModalActions>
     </Modal>
   )

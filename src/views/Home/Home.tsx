@@ -11,12 +11,12 @@ import { timeStamp } from 'console'
 import intl from 'react-intl-universal'
 
 const Home: React.FC = () => {
-  // 是否有KBAR-ETH池子
-  const haveKBARETH = false
+  // 是否有SOJU-ETH池子
+  const haveSOJUETH = false
   const tip = () => {
-    if (!!haveKBARETH) {
+    if (!!haveSOJUETH) {
       return (<StyledInfo>
-        🏆<b>Pro Tip</b>: KBAR-ETH UNI-V2 LP token pool yields TWICE more token rewards per block.
+        🏆<b>Pro Tip</b>: SOJU-ETH UNI-V2 LP token pool yields TWICE more token rewards per block.
       </StyledInfo>)
     } else {
       return null
@@ -38,7 +38,7 @@ const Home: React.FC = () => {
       <Spacer size="lg" />
       <ButtonWrap>
         <Button
-          text="🪑 See the Menu" to="/farms" variant="secondary" />
+          text={'🪑 ' + intl.get('SeeMenu')} to="/farms" variant="secondary" />
 
       </ButtonWrap>
     </Page>

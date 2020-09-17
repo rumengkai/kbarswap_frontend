@@ -21,6 +21,7 @@ import { getBalanceNumber } from '../../../utils/formatBalance'
 import DepositModal from './DepositModal'
 import WithdrawModal from './WithdrawModal'
 import chef from '../../../assets/img/chef.png'
+import intl from 'react-intl-universal';
 
 interface StakeProps {
   lpContract: Contract
@@ -79,20 +80,20 @@ const Stake: React.FC<StakeProps> = ({ lpContract, pid, tokenName }) => {
               <img src={chef} height="42" style={{ marginTop: -4 }} />
             </CardIcon>
             <Value value={getBalanceNumber(stakedBalance)} />
-            <Label text={`${tokenName} Tokens Staked`} />
+            <Label text={intl.get('TokensStaked',{tokenName:tokenName})} />
           </StyledCardHeader>
           <StyledCardActions>
             {!allowance.toNumber() ? (
               <Button
                 disabled={requestedApproval}
                 onClick={handleApprove}
-                text={`Approve ${tokenName}`}
+                text={intl.get('Approve', {tokenName:tokenName})}
               />
             ) : (
                 <>
                   <Button
                     disabled={stakedBalance.eq(new BigNumber(0))}
-                    text="Unstake"
+                    text={intl.get('Unstake')}
                     onClick={onPresentWithdraw}
                   />
                   <StyledActionSpacer />

@@ -16,6 +16,7 @@ import useTokenBalance from '../../../hooks/useTokenBalance'
 import useKbar from '../../../hooks/useKbar'
 import { getKbarAddress, getKbarSupply } from '../../../kbar/utils'
 import { getBalanceNumber } from '../../../utils/formatBalance'
+import intl from 'react-intl-universal'
 
 const PendingRewards: React.FC = () => {
   const [start, setStart] = useState(0)
@@ -94,8 +95,7 @@ const Balances: React.FC = () => {
               <KbarIcon />
               <Spacer />
               <div style={{ flex: 1 }}>
-                {/* <Label text="Your KBAR Balance" /> */}
-                <Label text="Your KBAR Balance" />
+                <Label text={intl.get('YourSOJU')} />
                 <Value
                   value={!!account ? getBalanceNumber(kbarBalance) : 'Locked'}
                 />
@@ -104,9 +104,9 @@ const Balances: React.FC = () => {
           </StyledBalances>
         </CardContent>
         <Footnote>
-          Pending harvest
+          {intl.get('PendingHarvest')}
           <FootnoteValue>
-            <PendingRewards /> KBAR
+            <PendingRewards /> SOJU
           </FootnoteValue>
         </Footnote>
       </Card>
@@ -114,15 +114,14 @@ const Balances: React.FC = () => {
 
       <Card>
         <CardContent>
-          {/* <Label text="Total KBAR Supply" /> */}
-          <Label text="Total KBAR Supply" />
+          <Label text={intl.get('TotalSOJU')} />
           <Value
             value={totalSupply ? getBalanceNumber(totalSupply) : 'Locked'}
           />
         </CardContent>
         <Footnote>
-          New rewards per block
-          <FootnoteValue>1,000 KBAR</FootnoteValue>
+          {intl.get('NewRewards')}
+          <FootnoteValue>1,000 SOJU</FootnoteValue>
         </Footnote>
       </Card>
     </StyledWrapper>
