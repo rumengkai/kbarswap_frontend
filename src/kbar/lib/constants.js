@@ -99,23 +99,19 @@ export const supportedPools = [
     tokenSymbol: 'SOJU',
     icon: 'bottle',
   },
-  // {
-  //   pid: 0,
-  //   lpAddresses: {
-  //     1: '0x0a24adf229e7b3271d314aa934749dd454029959',
-  //     3: '0x15c3c4147a862bbb56b46806a94719d72da410dd',
-  //   },
-  //   tokenAddresses: {
-  //     1: '0x8d18f76d1F87A7347A74f957052f414472945BE4',
-  //     3: '0x2d19a1cdb141df4c800b4ffeb466042e6a25c524',
-  //   },
-  //   name: 'Kompass Soju ',
-  //   name: {
-  //     'en-US': 'Kompass Soju ',
-  //     'ko-KR': '소주 파티!',
-  //   },
-  //   symbol: 'KOMP-ETH UNI-V2 LP',
-  //   tokenSymbol: 'KOMP',
-  //   icon: 'soju',
-  // },
+  {
+    pid: 0,
+    lpAddresses: {
+      1: '0x0a24adf229e7b3271d314aa934749dd454029959',
+      3: '0x15c3c4147a862bbb56b46806a94719d72da410dd',
+    },
+    tokenAddresses: {
+      1: '0x8d18f76d1F87A7347A74f957052f414472945BE4',
+      3: '0x2d19a1cdb141df4c800b4ffeb466042e6a25c524',
+    },
+    name: 'Kompass Soju ',
+    symbol: 'KOMP-ETH UNI-V2 LP',
+    tokenSymbol: 'KOMP',
+    icon: 'soju',
+  },
 ]
