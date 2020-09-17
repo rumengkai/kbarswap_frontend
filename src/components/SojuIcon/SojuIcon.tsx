@@ -1,14 +1,14 @@
 import React from 'react'
 import soju from '../../assets/icon/soju.png'
 
-interface KbarIconProps {
+interface SojuIconProps {
   size?: number
   v1?: boolean
   v2?: boolean
   v3?: boolean
 }
 
-const KbarIcon: React.FC<KbarIconProps> = ({ size = 36, v1, v2, v3 }) => (
+const SojuIcon: React.FC<SojuIconProps> = ({ size = 36, v1, v2, v3 }) => (
   <span
     role="img"
     style={{
@@ -20,4 +20,4 @@ const KbarIcon: React.FC<KbarIconProps> = ({ size = 36, v1, v2, v3 }) => (
   </span>
 )
 
-export default KbarIcon
+export default SojuIcon

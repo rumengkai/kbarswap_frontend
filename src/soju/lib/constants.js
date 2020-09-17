@@ -69,7 +69,7 @@ export const contractAddresses = {
     1: '0x66d6dcdf72125c2f6a4039567076376ec6e2f324',
     3: '0x6d4775cb9a038943bfcb9ac9e846c515c8839b0f',
   },
-  kbar: {
+  soju: {
     1: '0x451c2220a761dc5759e5c6d17bd28a568318a26b',
     3: '0x22073a445dde462fd6d2c88606f501aca8a50cb6',
   },
@@ -91,8 +91,8 @@ export const supportedPools = [
       3: contractAddresses.lpAddresses[3],
     },
     tokenAddresses: {
-      1: contractAddresses.kbar[1],
-      3: contractAddresses.kbar[3],
+      1: contractAddresses.soju[1],
+      3: contractAddresses.soju[3],
     },
     name: 'SOJUParty',
     symbol: 'SOJU-ETH UNI-V2 LP',

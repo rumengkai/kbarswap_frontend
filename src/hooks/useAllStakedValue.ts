@@ -10,8 +10,8 @@ import {
   getWethContract,
   getFarms,
   getTotalLPWethValue,
-} from '../kbar/utils'
-import useKbar from './useKbar'
+} from '../soju/utils'
+import useSoju from './useSoju'
 import useBlock from './useBlock'
 
 export interface StakedValue {
@@ -25,10 +25,10 @@ export interface StakedValue {
 const useAllStakedValue = () => {
   const [balances, setBalance] = useState([] as Array<StakedValue>)
   const { account }: { account: string; ethereum: provider } = useWallet()
-  const kbar = useKbar()
-  const farms = getFarms(kbar)
-  const SommelierContract = getSommelierContract(kbar)
-  const wethContact = getWethContract(kbar)
+  const soju = useSoju()
+  const farms = getFarms(soju)
+  const SommelierContract = getSommelierContract(soju)
+  const wethContact = getWethContract(soju)
   const block = useBlock()
 
   const fetchAllStakedValue = useCallback(async () => {
@@ -54,13 +54,13 @@ const useAllStakedValue = () => {
       ),
     )
     setBalance(balances)
-  }, [account, SommelierContract, kbar])
+  }, [account, SommelierContract, soju])
 
   useEffect(() => {
-    if (account && SommelierContract && kbar) {
+    if (account && SommelierContract && soju) {
       fetchAllStakedValue()
     }
-  }, [account, block, SommelierContract, setBalance, kbar])
+  }, [account, block, SommelierContract, setBalance, soju])
 
   return balances
 }

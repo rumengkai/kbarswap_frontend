@@ -2,8 +2,8 @@
   {
     "inputs": [
       {
-        "internalType": "contract KbarToken",
-        "name": "_kbar",
+        "internalType": "contract SojuToken",
+        "name": "_soju",
         "type": "address"
       },
       {
@@ -13,7 +13,7 @@
       },
       {
         "internalType": "uint256",
-        "name": "_kbarPerBlock",
+        "name": "_sojuPerBlock",
         "type": "uint256"
       },
       {
@@ -230,7 +230,7 @@
         "type": "address"
       }
     ],
-    "name": "pendingKbar",
+    "name": "pendingSoju",
     "outputs": [
       {
         "internalType": "uint256",
@@ -268,7 +268,7 @@
       },
       {
         "internalType": "uint256",
-        "name": "accKbarPerShare",
+        "name": "accSojuPerShare",
         "type": "uint256"
       }
     ],
@@ -333,10 +333,10 @@
   },
   {
     "inputs": [],
-    "name": "kbar",
+    "name": "soju",
     "outputs": [
       {
-        "internalType": "contract KbarToken",
+        "internalType": "contract SojuToken",
         "name": "",
         "type": "address"
       }
@@ -346,7 +346,7 @@
   },
   {
     "inputs": [],
-    "name": "kbarPerBlock",
+    "name": "sojuPerBlock",
     "outputs": [
       {
         "internalType": "uint256",

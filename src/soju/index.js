@@ -6,5 +6,5 @@ BigNumber.config({
   DECIMAL_PLACES: 80,
 })
 
-export { Kbar } from './Kbar.js'
+export { Soju } from './Soju.js'
 export { Web3, BigNumber }

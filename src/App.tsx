@@ -8,7 +8,7 @@ import TopBar from './components/TopBar'
 import FarmsProvider from './contexts/Farms'
 import ModalsProvider from './contexts/Modals'
 import TransactionProvider from './contexts/Transactions'
-import KbarProvider from './contexts/KbarProvider'
+import SojuProvider from './contexts/SojuProvider'
 import useModal from './hooks/useModal'
 import theme from './theme'
 // import Farms from './views/Farms'
@@ -126,13 +126,13 @@ const Providers: React.FC = ({ children }) => {
           walletconnect: { rpcUrl: rpcUrl() },
         }}
       >
-        <KbarProvider>
+        <SojuProvider>
           <TransactionProvider>
             <FarmsProvider>
               <ModalsProvider>{children}</ModalsProvider>
             </FarmsProvider>
           </TransactionProvider>
-        </KbarProvider>
+        </SojuProvider>
       </UseWalletProvider>
     </ThemeProvider>
   )

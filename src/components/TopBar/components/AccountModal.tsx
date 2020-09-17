@@ -2,8 +2,8 @@ import React, { useCallback } from 'react'
 import styled from 'styled-components'
 import { useWallet } from 'use-wallet'
 import useTokenBalance from '../../../hooks/useTokenBalance'
-import useKbar from '../../../hooks/useKbar'
-import { getKbarAddress } from '../../../kbar/utils'
+import useSoju from '../../../hooks/useSoju'
+import { getSojuAddress } from '../../../soju/utils'
 import { getBalanceNumber } from '../../../utils/formatBalance'
 import Button from '../../Button'
 import CardIcon from '../../CardIcon'
@@ -14,7 +14,7 @@ import ModalContent from '../../ModalContent'
 import ModalTitle from '../../ModalTitle'
 import Spacer from '../../Spacer'
 import Value from '../../Value'
-import soju from '../../../assets/icon/soju.png'
+import sojuicon from '../../../assets/icon/soju.png'
 import intl from 'react-intl-universal'
 
 const AccountModal: React.FC<ModalProps> = ({ onDismiss }) => {
@@ -25,8 +25,8 @@ const AccountModal: React.FC<ModalProps> = ({ onDismiss }) => {
     reset()
   }, [onDismiss, reset])
 
-  const kbar = useKbar()
-  const kbarBalance = useTokenBalance(getKbarAddress(kbar))
+  const soju = useSoju()
+  const sojuBalance = useTokenBalance(getSojuAddress(soju))
 
   return (
     <Modal>
@@ -37,10 +37,10 @@ const AccountModal: React.FC<ModalProps> = ({ onDismiss }) => {
         <div style={{ display: 'flex' }}>
           <StyledBalanceWrapper>
             <CardIcon>
-              <img src={soju} style={{ width: '40px', height: '40px' }} />
+              <img src={sojuicon} style={{ width: '40px', height: '40px' }} />
             </CardIcon>
             <StyledBalance>
-              <Value value={getBalanceNumber(kbarBalance)} />
+              <Value value={getBalanceNumber(sojuBalance)} />
               <Label text={intl.get('SOJUBalance')} />
             </StyledBalance>
           </StyledBalanceWrapper>

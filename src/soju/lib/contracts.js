@@ -1,7 +1,7 @@
 import BigNumber from 'bignumber.js/bignumber'
 import ERC20Abi from './abi/erc20.json'
 import SommelierAbi from './abi/sommelier.json'
-import KbarAbi from './abi/kbar.json'
+import SojuAbi from './abi/soju.json'
 import UNIV2PairAbi from './abi/uni_v2_lp.json'
 import WETHAbi from './abi/weth.json'
 import {
@@ -21,7 +21,7 @@ export class Contracts {
     this.defaultGas = options.defaultGas
     this.defaultGasPrice = options.defaultGasPrice
 
-    this.kbar = new this.web3.eth.Contract(KbarAbi)
+    this.soju = new this.web3.eth.Contract(SojuAbi)
     this.Sommelier = new this.web3.eth.Contract(SommelierAbi)
     this.weth = new this.web3.eth.Contract(WETHAbi)
 
@@ -45,7 +45,7 @@ export class Contracts {
       else console.error('Contract address not found in network', networkId)
     }
 
-    setProvider(this.kbar, contractAddresses.kbar[networkId])
+    setProvider(this.soju, contractAddresses.soju[networkId])
     setProvider(this.Sommelier, contractAddresses.Sommelier[networkId])
     setProvider(this.weth, contractAddresses.weth[networkId])
 
@@ -58,7 +58,7 @@ export class Contracts {
   }
 
   setDefaultAccount(account) {
-    this.kbar.options.from = account
+    this.soju.options.from = account
     this.Sommelier.options.from = account
   }
 

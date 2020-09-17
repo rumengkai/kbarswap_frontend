@@ -1,19 +1,19 @@
 import { useCallback, useEffect, useState } from 'react'
 
 import BigNumber from 'bignumber.js'
-import useKbar from './useKbar'
+import useSoju from './useSoju'
 import { useWallet } from 'use-wallet'
 import { provider } from 'web3-core'
 import { Contract } from 'web3-eth-contract'
 
 import { getAllowance } from '../utils/erc20'
-import { getSommelierContract } from '../kbar/utils'
+import { getSommelierContract } from '../soju/utils'
 
 const useAllowance = (lpContract: Contract) => {
   const [allowance, setAllowance] = useState(new BigNumber(0))
   const { account }: { account: string; ethereum: provider } = useWallet()
-  const kbar = useKbar()
-  const SommelierContract = getSommelierContract(kbar)
+  const soju = useSoju()
+  const SommelierContract = getSommelierContract(soju)
 
   const fetchAllowance = useCallback(async () => {
     const allowance = await getAllowance(

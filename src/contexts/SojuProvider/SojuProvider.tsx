@@ -2,35 +2,35 @@ import React, { createContext, useEffect, useState } from 'react'
 
 import { useWallet } from 'use-wallet'
 
-import { Kbar } from '../../kbar'
+import { Soju } from '../../soju'
 
-export interface KbarContext {
-  kbar?: typeof Kbar
+export interface SojuContext {
+  soju?: typeof Soju
 }
 
-export const Context = createContext<KbarContext>({
-  kbar: undefined,
+export const Context = createContext<SojuContext>({
+  soju: undefined,
 })
 
 declare global {
   interface Window {
-    kbarsauce: any
+    sojusauce: any
   }
 }
 
-const KbarProvider: React.FC = ({ children }) => {
+const SojuProvider: React.FC = ({ children }) => {
   const { ethereum }: { ethereum: any } = useWallet()
-  const [kbar, setKbar] = useState<any>()
+  const [soju, setSoju] = useState<any>()
 
   // @ts-ignore
-  window.kbar = kbar
+  window.soju = soju
   // @ts-ignore
   window.eth = ethereum
 
   useEffect(() => {
     if (ethereum) {
       const chainId = Number(ethereum.chainId)
-      const kbarLib = new Kbar(ethereum, chainId, false, {
+      const sojuLib = new Soju(ethereum, chainId, false, {
         defaultAccount: ethereum.selectedAddress,
         defaultConfirmations: 1,
         autoGasMultiplier: 1.5,
@@ -40,12 +40,12 @@ const KbarProvider: React.FC = ({ children }) => {
         accounts: [],
         ethereumNodeTimeout: 10000,
       })
-      setKbar(kbarLib)
-      window.kbarsauce = kbarLib
+      setSoju(sojuLib)
+      window.sojusauce = sojuLib
     }
   }, [ethereum])
 
-  return <Context.Provider value={{ kbar }}>{children}</Context.Provider>
+  return <Context.Provider value={{ soju }}>{children}</Context.Provider>
 }
 
-export default KbarProvider
+export default SojuProvider

@@ -13,11 +13,11 @@ import WalletProviderModal from '../../components/WalletProviderModal'
 
 import useModal from '../../hooks/useModal'
 
-import useKbar from '../../hooks/useKbar'
+import useSoju from '../../hooks/useSoju'
 import useFarm from '../../hooks/useFarm'
 import useRedeem from '../../hooks/useRedeem'
 import { getContract } from '../../utils/erc20'
-import { getSommelierContract } from '../../kbar/utils'
+import { getSommelierContract } from '../../soju/utils'
 
 import Harvest from './components/Harvest'
 import Stake from './components/Stake'
@@ -31,14 +31,14 @@ const Farm: React.FC = () => {
     window.scrollTo(0, 0)
   }, [])
 
-  const kbar = useKbar()
+  const soju = useSoju()
   const { ethereum } = useWallet()
 
   // const lpContract = useMemo(() => {
   //   return getContract(ethereum as provider, lpTokenAddress)
   // }, [ethereum, lpTokenAddress])
 
-  // const { onRedeem } = useRedeem(getSommelierContract(kbar))
+  // const { onRedeem } = useRedeem(getSommelierContract(soju))
 
   // const lpTokenName = useMemo(() => {
   //   return lpToken.toUpperCase()
@@ -54,7 +54,7 @@ const Farm: React.FC = () => {
         <>
           <PageHeader
             icon={<img src={chef} height="120" />}
-            title="Stake Kbar Tokens & Earn Fees"
+            title="Stake Soju Tokens & Earn Fees"
             subtitle="0.05% of all SojuSwap trades are rewarded to SOJU stakers"
           />
           {/* <FarmCards /> */}

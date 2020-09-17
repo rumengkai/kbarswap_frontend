@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { contractAddresses } from '../../../kbar/lib/constants'
+import { contractAddresses } from '../../../soju/lib/constants'
 import intl from 'react-intl-universal'
 
 const Nav: React.FC = () => {

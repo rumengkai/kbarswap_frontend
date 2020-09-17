@@ -1,16 +1,16 @@
 import { useCallback } from 'react'
 
-import useKbar from './useKbar'
+import useSoju from './useSoju'
 import { useWallet } from 'use-wallet'
 import { provider } from 'web3-core'
 import { Contract } from 'web3-eth-contract'
 
-import { approve, getSommelierContract } from '../kbar/utils'
+import { approve, getSommelierContract } from '../soju/utils'
 
 const useApprove = (lpContract: Contract) => {
   const { account }: { account: string; ethereum: provider } = useWallet()
-  const kbar = useKbar()
-  const SommelierContract = getSommelierContract(kbar)
+  const soju = useSoju()
+  const SommelierContract = getSommelierContract(soju)
 
   const handleApprove = useCallback(async () => {
     try {

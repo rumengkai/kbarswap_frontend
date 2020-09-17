@@ -8,13 +8,13 @@ import CardContent from '../../../components/CardContent'
 import Label from '../../../components/Label'
 import Spacer from '../../../components/Spacer'
 import Value from '../../../components/Value'
-import KbarIcon from '../../../components/KbarIcon'
+import SojuIcon from '../../../components/SojuIcon'
 import useAllEarnings from '../../../hooks/useAllEarnings'
 import useAllStakedValue from '../../../hooks/useAllStakedValue'
 import useFarms from '../../../hooks/useFarms'
 import useTokenBalance from '../../../hooks/useTokenBalance'
-import useKbar from '../../../hooks/useKbar'
-import { getKbarAddress, getKbarSupply } from '../../../kbar/utils'
+import useSoju from '../../../hooks/useSoju'
+import { getSojuAddress, getSojuSupply } from '../../../soju/utils'
 import { getBalanceNumber } from '../../../utils/formatBalance'
 import intl from 'react-intl-universal'
 
@@ -72,19 +72,19 @@ const PendingRewards: React.FC = () => {
 
 const Balances: React.FC = () => {
   const [totalSupply, setTotalSupply] = useState<BigNumber>()
-  const kbar = useKbar()
-  const kbarBalance = useTokenBalance(getKbarAddress(kbar))
+  const soju = useSoju()
+  const sojuBalance = useTokenBalance(getSojuAddress(soju))
   const { account, ethereum }: { account: any; ethereum: any } = useWallet()
 
   useEffect(() => {
     async function fetchTotalSupply() {
-      const supply = await getKbarSupply(kbar)
+      const supply = await getSojuSupply(soju)
       setTotalSupply(supply)
     }
-    if (kbar) {
+    if (soju) {
       fetchTotalSupply()
     }
-  }, [kbar, setTotalSupply])
+  }, [soju, setTotalSupply])
 
   return (
     <StyledWrapper>
@@ -92,12 +92,12 @@ const Balances: React.FC = () => {
         <CardContent>
           <StyledBalances>
             <StyledBalance>
-              <KbarIcon />
+              <SojuIcon />
               <Spacer />
               <div style={{ flex: 1 }}>
                 <Label text={intl.get('YourSOJU')} />
                 <Value
-                  value={!!account ? getBalanceNumber(kbarBalance) : 'Locked'}
+                  value={!!account ? getBalanceNumber(sojuBalance) : 'Locked'}
                 />
               </div>
             </StyledBalance>

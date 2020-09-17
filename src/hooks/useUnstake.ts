@@ -1,21 +1,21 @@
 import { useCallback } from 'react'
 
-import useKbar from './useKbar'
+import useSoju from './useSoju'
 import { useWallet } from 'use-wallet'
 
-import { unstake, getSommelierContract } from '../kbar/utils'
+import { unstake, getSommelierContract } from '../soju/utils'
 
 const useUnstake = (pid: number) => {
   const { account } = useWallet()
-  const kbar = useKbar()
-  const SommelierContract = getSommelierContract(kbar)
+  const soju = useSoju()
+  const SommelierContract = getSommelierContract(soju)
 
   const handleUnstake = useCallback(
     async (amount: string) => {
       const txHash = await unstake(SommelierContract, pid, amount, account)
       console.log(txHash)
     },
-    [account, pid, kbar],
+    [account, pid, soju],
   )
 
   return { onUnstake: handleUnstake }

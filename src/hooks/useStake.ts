@@ -1,25 +1,25 @@
 import { useCallback } from 'react'
 
-import useKbar from './useKbar'
+import useSoju from './useSoju'
 import { useWallet } from 'use-wallet'
 
-import { stake, getSommelierContract } from '../kbar/utils'
+import { stake, getSommelierContract } from '../soju/utils'
 
 const useStake = (pid: number) => {
   const { account } = useWallet()
-  const kbar = useKbar()
+  const soju = useSoju()
 
   const handleStake = useCallback(
     async (amount: string) => {
       const txHash = await stake(
-        getSommelierContract(kbar),
+        getSommelierContract(soju),
         pid,
         amount,
         account,
       )
       console.log(txHash)
     },
-    [account, pid, kbar],
+    [account, pid, soju],
   )
   return { onStake: handleStake }
 }

@@ -14,14 +14,14 @@ import useAllStakedValue, {
   StakedValue,
 } from '../../../hooks/useAllStakedValue'
 import useFarms from '../../../hooks/useFarms'
-import useKbar from '../../../hooks/useKbar'
-import { getEarned, getSommelierContract } from '../../../kbar/utils'
+import useSoju from '../../../hooks/useSoju'
+import { getEarned, getSommelierContract } from '../../../soju/utils'
 import { bnToDec } from '../../../utils'
 import beer from '../../../assets/icon/beer.png'
 import bottle from '../../../assets/icon/bottle.png'
 import cocktail from '../../../assets/icon/cocktail.png'
 import sake from '../../../assets/icon/sake.png'
-import soju from '../../../assets/icon/soju.png'
+import sojuIcon from '../../../assets/icon/soju.png'
 import tropical from '../../../assets/icon/tropical.png'
 import tumbler from '../../../assets/icon/tumbler.png'
 import wine from '../../../assets/icon/wine.png'
@@ -36,13 +36,13 @@ const FarmCards: React.FC = () => {
   const { account } = useWallet()
   const stakedValue = useAllStakedValue()
 
-  const kbarIndex = farms.findIndex(
+  const sojuIndex = farms.findIndex(
     ({ tokenSymbol }) => tokenSymbol === 'SOJU',
   )
 
-  const kbarPrice =
-    kbarIndex >= 0 && stakedValue[kbarIndex]
-      ? stakedValue[kbarIndex].tokenPriceInWeth
+  const sojuPrice =
+    sojuIndex >= 0 && stakedValue[sojuIndex]
+      ? stakedValue[sojuIndex].tokenPriceInWeth
       : new BigNumber(0)
 
   const BLOCKS_PER_YEAR = new BigNumber(2336000)
@@ -54,7 +54,7 @@ const FarmCards: React.FC = () => {
         ...farm,
         ...stakedValue[i],
         apy: stakedValue[i]
-          ? kbarPrice
+          ? sojuPrice
             .times(SOJU_PER_BLOCK)
             .times(BLOCKS_PER_YEAR)
             .times(stakedValue[i].poolWeight)
@@ -104,7 +104,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm }) => {
 
   const { account } = useWallet()
   const { lpTokenAddress } = farm
-  const kbar = useKbar()
+  const soju = useSoju()
 
   const renderer = (countdownProps: CountdownRenderProps) => {
     const { hours, minutes, seconds } = countdownProps
@@ -120,18 +120,18 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm }) => {
 
   useEffect(() => {
     async function fetchEarned() {
-      if (kbar) return
+      if (soju) return
       const earned = await getEarned(
-        getSommelierContract(kbar),
+        getSommelierContract(soju),
         lpTokenAddress,
         account,
       )
       setHarvestable(bnToDec(earned))
     }
-    if (kbar && account) {
+    if (soju && account) {
       fetchEarned()
     }
-  }, [kbar, lpTokenAddress, account, setHarvestable])
+  }, [soju, lpTokenAddress, account, setHarvestable])
 
   const poolActive = true // startTime * 1000 - Date.now() <= 0
 
@@ -146,7 +146,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm }) => {
       case 'sake':
         return sake
       case 'soju':
-        return soju
+        return sojuIcon
       case 'tropical':
         return tropical
       case 'tumbler':

@@ -1,7 +1,7 @@
 import { useCallback } from 'react'
 import { useWallet } from 'use-wallet'
 import { Contract } from 'web3-eth-contract'
-import { redeem } from '../kbar/utils'
+import { redeem } from '../soju/utils'
 
 const useRedeem = (SommelierContract: Contract) => {
   const { account } = useWallet()

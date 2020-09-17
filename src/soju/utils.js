@@ -13,26 +13,26 @@ const GAS_LIMIT = {
   },
 }
 
-export const getSommelierAddress = (kbar) => {
-  return kbar && kbar.SommelierAddress
+export const getSommelierAddress = (soju) => {
+  return soju && soju.SommelierAddress
 }
-export const getKbarAddress = (kbar) => {
-  return kbar && kbar.kbarAddress
+export const getSojuAddress = (soju) => {
+  return soju && soju.sojuAddress
 }
-export const getWethContract = (kbar) => {
-  return kbar && kbar.contracts && kbar.contracts.weth
-}
-
-export const getSommelierContract = (kbar) => {
-  return kbar && kbar.contracts && kbar.contracts.Sommelier
-}
-export const getKbarContract = (kbar) => {
-  return kbar && kbar.contracts && kbar.contracts.kbar
+export const getWethContract = (soju) => {
+  return soju && soju.contracts && soju.contracts.weth
 }
 
-export const getFarms = (kbar) => {
-  return kbar
-    ? kbar.contracts.pools.map(
+export const getSommelierContract = (soju) => {
+  return soju && soju.contracts && soju.contracts.Sommelier
+}
+export const getSojuContract = (soju) => {
+  return soju && soju.contracts && soju.contracts.soju
+}
+
+export const getFarms = (soju) => {
+  return soju
+    ? soju.contracts.pools.map(
         ({
           pid,
           name,
@@ -53,8 +53,8 @@ export const getFarms = (kbar) => {
           tokenAddress,
           tokenSymbol,
           tokenContract,
-          earnToken: 'kbar',
-          earnTokenAddress: kbar.contracts.kbar.options.address,
+          earnToken: 'soju',
+          earnTokenAddress: soju.contracts.soju.options.address,
           icon,
         }),
       )
@@ -71,7 +71,7 @@ export const getPoolWeight = async (SommelierContract, pid) => {
 }
 
 export const getEarned = async (SommelierContract, pid, account) => {
-  return SommelierContract.methods.pendingKbar(pid, account).call()
+  return SommelierContract.methods.pendingSoju(pid, account).call()
 }
 
 export const getTotalLPWethValue = async (
@@ -137,8 +137,8 @@ export const approve = async (lpContract, SommelierContract, account) => {
     .send({ from: account })
 }
 
-export const getKbarSupply = async (kbar) => {
-  return new BigNumber(await kbar.contracts.kbar.methods.totalSupply().call())
+export const getSojuSupply = async (soju) => {
+  return new BigNumber(await soju.contracts.soju.methods.totalSupply().call())
 }
 
 export const stake = async (SommelierContract, pid, amount, account) => {

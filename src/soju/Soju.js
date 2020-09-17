@@ -6,7 +6,7 @@ import { EVM } from './lib/evm.js'
 
 import { contractAddresses } from './lib/constants'
 
-export class Kbar {
+export class Soju {
   constructor(provider, networkId, testing, options) {
     var realProvider
 
@@ -37,7 +37,7 @@ export class Kbar {
       this.web3.eth.defaultAccount = options.defaultAccount
     }
     this.contracts = new Contracts(realProvider, networkId, this.web3, options)
-    this.kbarAddress = contractAddresses.kbar[networkId]
+    this.sojuAddress = contractAddresses.soju[networkId]
     this.SommelierAddress = contractAddresses.Sommelier[networkId]
     this.wethAddress = contractAddresses.weth[networkId]
   }

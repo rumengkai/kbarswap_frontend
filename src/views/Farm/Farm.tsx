@@ -7,8 +7,8 @@ import PageHeader from '../../components/PageHeader'
 import Spacer from '../../components/Spacer'
 import useFarm from '../../hooks/useFarm'
 import useRedeem from '../../hooks/useRedeem'
-import useKbar from '../../hooks/useKbar'
-import { getSommelierContract } from '../../kbar/utils'
+import useSoju from '../../hooks/useSoju'
+import { getSommelierContract } from '../../soju/utils'
 import { getContract } from '../../utils/erc20'
 import Harvest from './components/Harvest'
 import Stake from './components/Stake'
@@ -38,14 +38,14 @@ const Farm: React.FC = () => {
     window.scrollTo(0, 0)
   }, [])
 
-  const kbar = useKbar()
+  const soju = useSoju()
   const { ethereum } = useWallet()
 
   const lpContract = useMemo(() => {
     return getContract(ethereum as provider, lpTokenAddress)
   }, [ethereum, lpTokenAddress])
 
-  const { onRedeem } = useRedeem(getSommelierContract(kbar))
+  const { onRedeem } = useRedeem(getSommelierContract(soju))
 
   const lpTokenName = useMemo(() => {
     return lpToken.toUpperCase()
