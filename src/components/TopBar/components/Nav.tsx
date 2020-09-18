@@ -16,7 +16,7 @@ const Nav: React.FC = () => {
         Staking
       </StyledLink> */}
       <StyledAbsoluteLink
-        href="https://medium.com/SojuSwap/the-SojuSwap-project-c4049ea9941e"
+        href="https://medium.com/@sojuswap"
         target="_blank"
       >
         {intl.get("About")}

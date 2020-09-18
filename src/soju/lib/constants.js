@@ -114,7 +114,7 @@ export const supportedPools = [
       1: '0x8d18f76d1F87A7347A74f957052f414472945BE4',
       3: '0xca7d0b04266a9ff3fc2d43f0abbd30091b11bdd0',
     },
-    name: 'Kompass Soju ',
+    name: 'Kompass SOJU',
     symbol: 'KOMP-ETH UNI-V2 LP',
     tokenSymbol: 'KOMP',
     icon: 'bottle',

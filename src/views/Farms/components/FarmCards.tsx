@@ -170,8 +170,8 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm }) => {
             <CardIcon><img src={iconFun(farm.icon)} style={{ width: '40px', height: '40px' }} /></CardIcon>
             <StyledTitle>{intl.get(farm.name) ? intl.get(farm.name) : farm.name}</StyledTitle>
             <StyledDetails>
-              <StyledDetail>{intl.get('Deposit_text')} {farm.lpToken.toUpperCase()}</StyledDetail>
-              <StyledDetail>{intl.get('Earn')} {farm.earnToken.toUpperCase()}</StyledDetail>
+              <StyledDetail>{intl.get('Deposit_text',{symbol:farm.lpToken.toUpperCase()})}</StyledDetail>
+              <StyledDetail>{intl.get('Earn',{earnTokenName:farm.earnToken.toUpperCase()})} </StyledDetail>
             </StyledDetails>
             <Spacer />
             <Button

@@ -24,7 +24,7 @@ const PageHeader: React.FC<PageHeaderProps> = ({ icon, subtitle, title }) => {
     if (title.indexOf('Sommelier') > -1) {
       return (<StyledTitle>Your <StyledTitleSpan>Sommelier</StyledTitleSpan> is ready</StyledTitle>)
     } else {
-      return (<StyledTitle>{title?(intl.get(title)?intl.get(title):title):title}</StyledTitle>)
+      return (<StyledTitle>{title ? (intl.get(title) ? intl.get(title) : title) : title}</StyledTitle>)
     }
   }
   const iconFun = (icon: any) => {
@@ -102,6 +102,8 @@ const StyledTitle = styled.div`
   line-height: 80px;
   margin: 0;
   padding: 0;
+  width: 750px;
+  text-align: center;
 `
 
 const StyledSubtitle = styled.h3`

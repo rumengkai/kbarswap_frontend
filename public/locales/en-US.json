@@ -40,8 +40,8 @@
   "PendingConfirmation": "Pending Confirmation",
   "SelectWallet": "Select a wallet provider.",
   "Loading": "Loading",
-  "Deposit_text": "Deposit",
-  "Earn": "Earn",
+  "Deposit_text": "Deposit {symbol}",
+  "Earn": "Earn {earnTokenName}",
   "Locked": "Locked",
   "Connect": "Connect"
 }

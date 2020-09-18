@@ -18,16 +18,16 @@ const Nav: React.FC = () => {
       <StyledLink target="_blank" href="https://github.com/SojuSwap">
         Github
       </StyledLink>
-      <StyledLink target="_blank" href="#">
+      <StyledLink target="_blank" href="https://twitter.com/Sojuswap_Defi">
         Twitter
       </StyledLink>
-      <StyledLink target="_blank" href="https://twitter.com/SojuSwap">
+      <StyledLink target="_blank" href="https://medium.com/@sojuswap">
         Medium
       </StyledLink>
       <StyledLink target="_blank" href="#">
         Telegram
       </StyledLink>
-      <StyledLink target="_blank" href="https://discord.gg/hJ2p555">
+      <StyledLink target="_blank" href="https://discord.gg/nZkwBCw">
         Discord
       </StyledLink>
     </StyledNav>
