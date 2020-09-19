@@ -68,7 +68,6 @@ UNI-V2 LP Address on mainnet for reference
 
 // sommiler:0x1cbc7803acf0594ad28de1dde8d74304dc6f6c62
 
-
 export const contractAddresses = {
   lpAddresses: {
     1: '0x66d6dcdf72125c2f6a4039567076376ec6e2f324',
@@ -90,33 +89,48 @@ export const contractAddresses = {
 
 export const supportedPools = [
   {
-    pid: 1,
-    lpAddresses: {
-      1: contractAddresses.lpAddresses[1],
-      3: contractAddresses.lpAddresses[3],
-    },
-    tokenAddresses: {
-      1: contractAddresses.soju[1],
-      3: contractAddresses.soju[3],
-    },
-    name: 'SOJUParty',
-    symbol: 'SOJU-ETH UNI-V2 LP',
-    tokenSymbol: 'SOJU',
-    icon: 'soju',
-  },
-  {
     pid: 0,
     lpAddresses: {
-      1: '0x0a24adf229e7b3271d314aa934749dd454029959',
-      3: '0x04079d2e8a33ba47408473838ec1bf3e81bc1a3c',
+      1: '0x0d4a11d5eeaac28ec3f61d100daf4d40471f1852',
+      3: '0x0d4a11d5eeaac28ec3f61d100daf4d40471f1852',
     },
     tokenAddresses: {
-      1: '0x8d18f76d1F87A7347A74f957052f414472945BE4',
-      3: '0xca7d0b04266a9ff3fc2d43f0abbd30091b11bdd0',
+      1: '0xdac17f958d2ee523a2206206994597c13d831ec7',
+      3: '0xdac17f958d2ee523a2206206994597c13d831ec7',
     },
-    name: 'Kompass SOJU',
-    symbol: 'KOMP-ETH UNI-V2 LP',
-    tokenSymbol: 'KOMP',
-    icon: 'bottle',
+    name: 'Tether Beer',
+    symbol: 'USDT-ETH UNI-V2 LP',
+    tokenSymbol: 'USDT',
+    icon: 'beer',
   },
+  // {
+  //   pid: 1,
+  //   lpAddresses: {
+  //     1: contractAddresses.lpAddresses[1],
+  //     3: contractAddresses.lpAddresses[3],
+  //   },
+  //   tokenAddresses: {
+  //     1: contractAddresses.soju[1],
+  //     3: contractAddresses.soju[3],
+  //   },
+  //   name: 'SOJUParty',
+  //   symbol: 'SOJU-ETH UNI-V2 LP',
+  //   tokenSymbol: 'SOJU',
+  //   icon: 'soju',
+  // },
+  // {
+  //   pid: 0,
+  //   lpAddresses: {
+  //     1: '0x0a24adf229e7b3271d314aa934749dd454029959',
+  //     3: '0x04079d2e8a33ba47408473838ec1bf3e81bc1a3c',
+  //   },
+  //   tokenAddresses: {
+  //     1: '0x8d18f76d1F87A7347A74f957052f414472945BE4',
+  //     3: '0xca7d0b04266a9ff3fc2d43f0abbd30091b11bdd0',
+  //   },
+  //   name: 'Kompass SOJU',
+  //   symbol: 'KOMP-ETH UNI-V2 LP',
+  //   tokenSymbol: 'KOMP',
+  //   icon: 'bottle',
+  // },
 ]
