@@ -17,7 +17,7 @@ const SUPPOER_LOCALES = [
     value: "en-US"
   },
   {
-    name: "한국어.",
+    name: "한국어",
     value: "ko-KR"
   }
 ]

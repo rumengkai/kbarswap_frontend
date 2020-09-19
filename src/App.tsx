@@ -27,7 +27,7 @@ const SUPPOER_LOCALES = [
     value: "en-US"
   },
   {
-    name: "한국어.",
+    name: "한국어",
     value: "ko-KR"
   }
 ]
@@ -109,7 +109,7 @@ const App: React.FC = () => {
 
 const Providers: React.FC = ({ children }) => {
 
-  let chainId = 1  // 1：正式公网，3：测试网
+  let chainId = 3  // 1：正式公网，3：测试网
 
   const rpcUrl = () => {
     if (chainId === 1) {
