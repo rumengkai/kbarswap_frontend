@@ -46,7 +46,7 @@ const FarmCards: React.FC = () => {
       : new BigNumber(0)
 
   const BLOCKS_PER_YEAR = new BigNumber(2336000)
-  const SOJU_PER_BLOCK = new BigNumber(1000)
+  const SOJU_PER_BLOCK = new BigNumber(2)
 
   const rows = farms.reduce<FarmWithStakedValue[][]>(
     (farmRows, farm, i) => {
@@ -61,6 +61,17 @@ const FarmCards: React.FC = () => {
             .div(stakedValue[i].totalWethValue)
           : null,
       }
+
+      // if (stakedValue[i]) {
+      //   console.log('--------');
+      //   console.log(sojuPrice);
+      //   console.log(SOJU_PER_BLOCK.times(SOJU_PER_BLOCK));
+      //   console.log(BLOCKS_PER_YEAR);
+      //   console.log(stakedValue[i].poolWeight);
+      //   console.log(stakedValue[i].totalWethValue);
+      //   console.log('--------');
+      // }
+
       const newFarmRows = [...farmRows]
       if (newFarmRows[newFarmRows.length - 1].length === 3) {
         newFarmRows.push([farmWithStakedValue])
@@ -170,8 +181,8 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm }) => {
             <CardIcon><img src={iconFun(farm.icon)} style={{ width: '40px', height: '40px' }} /></CardIcon>
             <StyledTitle>{intl.get(farm.name) ? intl.get(farm.name) : farm.name}</StyledTitle>
             <StyledDetails>
-              <StyledDetail>{intl.get('Deposit_text',{symbol:farm.lpToken.toUpperCase()})}</StyledDetail>
-              <StyledDetail>{intl.get('Earn',{earnTokenName:farm.earnToken.toUpperCase()})} </StyledDetail>
+              <StyledDetail>{intl.get('Deposit_text', { symbol: farm.lpToken.toUpperCase() })}</StyledDetail>
+              <StyledDetail>{intl.get('Earn', { earnTokenName: farm.earnToken.toUpperCase() })} </StyledDetail>
             </StyledDetails>
             <Spacer />
             <Button

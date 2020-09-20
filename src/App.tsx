@@ -56,7 +56,7 @@ const App: React.FC = () => {
     }
 
     http.get(`locales/${currentLocale}.json`).then(res => {
-      console.log("App locale data", res.data)
+      // console.log("App locale data", res.data)
       // init method will load CLDR locale data according to currentLocale
       return intl.init({
         currentLocale,
@@ -109,7 +109,7 @@ const App: React.FC = () => {
 
 const Providers: React.FC = ({ children }) => {
 
-  let chainId = 3  // 1：正式公网，3：测试网
+  let chainId = 1  // 1：正式公网，3：测试网
 
   const rpcUrl = () => {
     if (chainId === 1) {

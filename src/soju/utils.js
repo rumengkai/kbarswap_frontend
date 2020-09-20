@@ -81,7 +81,6 @@ export const getTotalLPWethValue = async (
   tokenContract,
   pid,
 ) => {
-  // try {
   // Get balance of the token address
   const tokenAmountWholeLP = await tokenContract.methods
     .balanceOf(lpContract.options.address)
@@ -95,10 +94,21 @@ export const getTotalLPWethValue = async (
     .call()
   // Convert that into the portion of total lpContract = p1
   const totalSupply = await lpContract.methods.totalSupply().call()
+
+  // console.log('totalSupply',totalSupply);
+  
   // Get total weth value for the lpContract = w1
   const lpContractWeth = await wethContract.methods
     .balanceOf(lpContract.options.address)
     .call()
+
+  
+  // console.log('SommelierContract',SommelierContract.options.address);
+  // console.log('balance',balance);
+  
+  // console.log('lpContractWeth',lpContract.options.address);
+  // console.log('lpContractWethV',lpContractWeth);
+  
   // Return p1 * w1 * 2
   const portionLp = new BigNumber(balance).div(new BigNumber(totalSupply))
   const lpWethWorth = new BigNumber(lpContractWeth)
@@ -112,6 +122,12 @@ export const getTotalLPWethValue = async (
     .times(portionLp)
     .div(new BigNumber(10).pow(18))
 
+  // console.log('lpContractWeth',lpContractWeth);
+  // console.log('portionLp',portionLp);
+  // console.log('wethAmount',wethAmount);
+  // console.log('tokenAmount',tokenAmount);
+  // console.log('tokenPriceInWeth',wethAmount.div(tokenAmount));
+  
   return {
     tokenAmount,
     wethAmount,
@@ -119,16 +135,6 @@ export const getTotalLPWethValue = async (
     tokenPriceInWeth: wethAmount.div(tokenAmount),
     poolWeight: await getPoolWeight(SommelierContract, pid),
   }
-  // } catch (error) {
-  //   console.log('error', error)
-  //   return {
-  //     tokenAmount: '',
-  //     wethAmount: '',
-  //     totalWethValue: '',
-  //     tokenPriceInWeth: '',
-  //     poolWeight: Promise.resolve(),
-  //   }
-  // }
 }
 
 export const approve = async (lpContract, SommelierContract, account) => {
