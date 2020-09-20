@@ -51,6 +51,7 @@ const StyledModal = styled.div`
   flex-direction: column;
   position: relative;
   width: 100%;
+  overflow:auto;
   min-height: 0;
 `
 

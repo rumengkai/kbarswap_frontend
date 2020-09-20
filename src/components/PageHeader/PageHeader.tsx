@@ -102,7 +102,7 @@ const StyledTitle = styled.div`
   line-height: 80px;
   margin: 0;
   padding: 0;
-  width: 750px;
+  /* width: 750px; */
   text-align: center;
 `
 
