@@ -92,6 +92,9 @@ export const getTotalLPWethValue = async (
   const balance = await lpContract.methods
     .balanceOf(SommelierContract.options.address)
     .call()
+    
+  // console.log('balance',balance);
+  
   // Convert that into the portion of total lpContract = p1
   const totalSupply = await lpContract.methods.totalSupply().call()
 

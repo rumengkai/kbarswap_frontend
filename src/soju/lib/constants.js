@@ -74,11 +74,11 @@ export const contractAddresses = {
     3: '0x83c1e3eb8afb1ece20541eb43504f7600804d6ba',
   },
   soju: {
-    1: '0x451c2220a761dc5759e5c6d17bd28a568318a26b',
+    1: '0x49c4be97529904093bf33895ac03bef587f02219',
     3: '0x9380ef09e410071e2199a310ebce2e1781fe6f83',
   },
   Sommelier: {
-    1: '0xa0fd402bacd5fa935f4acfede486ac32c87d3b9d',
+    1: '0xe6639fda8f2018f80cfec1fbaa84557bc1d5fcaf',
     3: '0x1cbc7803acf0594ad28de1dde8d74304dc6f6c62',
   },
   weth: {
