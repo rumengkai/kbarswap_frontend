@@ -103,6 +103,21 @@ export const supportedPools = [
     tokenSymbol: 'USDT',
     icon: 'beer',
   },
+  {
+    pid: 1,
+    lpAddresses: {
+      1: '0xd3d2e2692501a5c9ca623199d38826e513033a17',
+      3: '0xd3d2e2692501a5c9ca623199d38826e513033a17',
+    },
+    tokenAddresses: {
+      1: '0x1f9840a85d5af5bf1d1762f925bdaddc4201f984',
+      3: '0x1f9840a85d5af5bf1d1762f925bdaddc4201f984',
+    },
+    name: 'UNI Sake',
+    symbol: 'UNI-ETH UNI-V2 LP',
+    tokenSymbol: 'UNI',
+    icon: 'sake',
+  },
   // {
   //   pid: 1,
   //   lpAddresses: {
