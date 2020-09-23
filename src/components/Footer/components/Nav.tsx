@@ -35,11 +35,14 @@ const Nav: React.FC = () => {
 }
 
 const StyledNav = styled.nav`
+  width:auto;
   align-items: center;
   display: flex;
 `
 
 const StyledLink = styled.a`
+  box-sizing:border-box;
+  white-space:nowrap; 
   color: ${(props) => props.theme.color.white};
   padding-left: ${(props) => props.theme.spacing[3]}px;
   padding-right: ${(props) => props.theme.spacing[3]}px;

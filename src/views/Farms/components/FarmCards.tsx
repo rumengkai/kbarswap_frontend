@@ -46,7 +46,7 @@ const FarmCards: React.FC = () => {
       : new BigNumber(0)
 
   const BLOCKS_PER_YEAR = new BigNumber(2336000)
-  const SOJU_PER_BLOCK = new BigNumber(1)
+  const SOJU_PER_BLOCK = new BigNumber(0.5)
   
 
 

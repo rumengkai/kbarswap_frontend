@@ -31,6 +31,7 @@ const StyledText = styled.span`
   font-family: 'Reem Kufi', sans-serif;
   font-size: 20px;
   font-weight: 700;
+  white-space:nowrap; 
   letter-spacing: 0.03em;
   margin-left: ${(props) => props.theme.spacing[2]}px;
   @media (max-width: 400px) {

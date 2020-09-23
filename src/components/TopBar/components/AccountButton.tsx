@@ -44,6 +44,7 @@ const StyledAccountButton = styled.div`
   }
   button{
     box-shadow:none;
+    white-space:nowrap; 
   }
 `
 
