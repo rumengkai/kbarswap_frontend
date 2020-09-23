@@ -66,7 +66,7 @@ export const getPoolWeight = async (SommelierContract, pid) => {
   const totalAllocPoint = await SommelierContract.methods
     .totalAllocPoint()
     .call()
-  console.log('totalAllocPoint', totalAllocPoint)
+  //onsole.log('totalAllocPoint', totalAllocPoint)
   return new BigNumber(allocPoint).div(new BigNumber(totalAllocPoint))
 }
 
@@ -104,7 +104,6 @@ export const getTotalLPWethValue = async (
   const lpContractWeth = await wethContract.methods
     .balanceOf(lpContract.options.address)
     .call()
-
   
   // console.log('SommelierContract',SommelierContract.options.address);
   // console.log('balance',balance);

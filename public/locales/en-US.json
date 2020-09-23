@@ -43,5 +43,7 @@
   "Deposit_text": "Deposit {symbol}",
   "Earn": "Earn {earnTokenName}",
   "Locked": "Locked",
-  "Connect": "Connect"
+  "Connect": "Connect",
+  "UNI Sake": "UNI Sake",
+  "Tether Beer": "Tether Beer"
 }

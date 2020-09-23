@@ -47,9 +47,17 @@ const FarmCards: React.FC = () => {
 
   const BLOCKS_PER_YEAR = new BigNumber(2336000)
   const SOJU_PER_BLOCK = new BigNumber(1)
+  
+
 
   const rows = farms.reduce<FarmWithStakedValue[][]>(
     (farmRows, farm, i) => {
+
+      //console.log(1,sojuPrice)
+      //console.log(2,SOJU_PER_BLOCK)
+      //console.log(3,stakedValue[i].poolWeight)
+      //console.log(4,stakedValue)
+
       const farmWithStakedValue = {
         ...farm,
         ...stakedValue[i],
@@ -64,12 +72,14 @@ const FarmCards: React.FC = () => {
 
       // if (stakedValue[i]) {
       //   console.log('--------');
-      //   console.log(sojuPrice);
+      //   console.log("sojuPrice",sojuPrice);
       //   console.log(SOJU_PER_BLOCK.times(SOJU_PER_BLOCK));
       //   console.log(BLOCKS_PER_YEAR);
       //   console.log(stakedValue[i].poolWeight);
       //   console.log(stakedValue[i].totalWethValue);
       //   console.log('--------');
+      // } else {
+      //   console.log(888888)
       // }
 
       const newFarmRows = [...farmRows]
@@ -116,7 +126,6 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm }) => {
   const { account } = useWallet()
   const { lpTokenAddress } = farm
   const soju = useSoju()
-
   const renderer = (countdownProps: CountdownRenderProps) => {
     const { hours, minutes, seconds } = countdownProps
     const paddedSeconds = seconds < 10 ? `0${seconds}` : seconds
@@ -172,6 +181,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm }) => {
     urlLocaleKey: "lang",
     cookieLocaleKey: "lang"
   })
+
   return (
     <StyledCardWrapper>
       {farm.tokenSymbol === 'SOJU' && <StyledCardAccent />}

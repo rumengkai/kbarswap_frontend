@@ -28,7 +28,7 @@ export const addressMap = {
   //YFI: '0x0bc529c00C6401aEF6D220BE8C6Ea1667F6Ad93e',
   //YCRV: '0xdF5e0e81Dff6FAF3A7e52BA697820c5e32D806A8',
   //UNIAmpl: '0xc5be99a02c6857f9eac67bbce58df5572498f40c',
-  WETH: '0xc778417E063141139Fce010982780140Aa0cD5Ab',
+  WETH: '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2',
   UNIRouter: '0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D',
   //LINK: '0x514910771AF9Ca656af840dff83E8264EcF986CA',
   //MKR: '0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2',
@@ -70,7 +70,7 @@ UNI-V2 LP Address on mainnet for reference
 
 export const contractAddresses = {
   lpAddresses: {
-    1: '0x66d6dcdf72125c2f6a4039567076376ec6e2f324',
+    1: '0x550e7ad2bca31981f24918cb806457008c2b11be',
     3: '0x83c1e3eb8afb1ece20541eb43504f7600804d6ba',
   },
   soju: {
