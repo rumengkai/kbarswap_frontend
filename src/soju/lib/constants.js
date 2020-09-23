@@ -89,6 +89,21 @@ export const contractAddresses = {
 
 export const supportedPools = [
   {
+    pid: 2,
+    lpAddresses: {
+      1: contractAddresses.lpAddresses[1],
+      3: contractAddresses.lpAddresses[3],
+    },
+    tokenAddresses: {
+      1: contractAddresses.soju[1],
+      3: contractAddresses.soju[3],
+    },
+    name: 'SOJUParty',
+    symbol: 'SOJU-ETH UNI-V2 LP',
+    tokenSymbol: 'SOJU',
+    icon: 'soju',
+  },
+  {
     pid: 0,
     lpAddresses: {
       1: '0x0d4a11d5eeaac28ec3f61d100daf4d40471f1852',
@@ -118,21 +133,6 @@ export const supportedPools = [
     tokenSymbol: 'UNI',
     icon: 'sake',
   },
-  // {
-  //   pid: 1,
-  //   lpAddresses: {
-  //     1: contractAddresses.lpAddresses[1],
-  //     3: contractAddresses.lpAddresses[3],
-  //   },
-  //   tokenAddresses: {
-  //     1: contractAddresses.soju[1],
-  //     3: contractAddresses.soju[3],
-  //   },
-  //   name: 'SOJUParty',
-  //   symbol: 'SOJU-ETH UNI-V2 LP',
-  //   tokenSymbol: 'SOJU',
-  //   icon: 'soju',
-  // },
   // {
   //   pid: 0,
   //   lpAddresses: {

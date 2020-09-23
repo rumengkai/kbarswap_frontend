@@ -18,7 +18,7 @@ const Nav: React.FC = () => {
       <StyledLink target="_blank" href="https://github.com/SojuSwap">
         Github
       </StyledLink>
-      <StyledLink target="_blank" href="https://twitter.com/Sojuswap_Defi">
+      <StyledLink target="_blank" href="https://twitter.com/sojuswap_SOJU">
         Twitter
       </StyledLink>
       <StyledLink target="_blank" href="https://medium.com/@sojuswap">
