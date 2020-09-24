@@ -25,7 +25,7 @@ import sojuIcon from '../../../assets/icon/soju.png'
 import tropical from '../../../assets/icon/tropical.png'
 import tumbler from '../../../assets/icon/tumbler.png'
 import wine from '../../../assets/icon/wine.png'
-import intl from 'react-intl-universal';
+import intl from 'react-intl-universal'
 
 interface FarmWithStakedValue extends Farm, StakedValue {
   apy: BigNumber
@@ -36,9 +36,7 @@ const FarmCards: React.FC = () => {
   const { account } = useWallet()
   const stakedValue = useAllStakedValue()
 
-  const sojuIndex = farms.findIndex(
-    ({ tokenSymbol }) => tokenSymbol === 'SOJU',
-  )
+  const sojuIndex = farms.findIndex(({ tokenSymbol }) => tokenSymbol === 'SOJU')
 
   const sojuPrice =
     sojuIndex >= 0 && stakedValue[sojuIndex]
@@ -47,12 +45,9 @@ const FarmCards: React.FC = () => {
 
   const BLOCKS_PER_YEAR = new BigNumber(2336000)
   const SOJU_PER_BLOCK = new BigNumber(0.5)
-  
-
 
   const rows = farms.reduce<FarmWithStakedValue[][]>(
     (farmRows, farm, i) => {
-
       //console.log(1,sojuPrice)
       //console.log(2,SOJU_PER_BLOCK)
       //console.log(3,stakedValue[i].poolWeight)
@@ -63,10 +58,10 @@ const FarmCards: React.FC = () => {
         ...stakedValue[i],
         apy: stakedValue[i]
           ? sojuPrice
-            .times(SOJU_PER_BLOCK)
-            .times(BLOCKS_PER_YEAR)
-            .times(stakedValue[i].poolWeight)
-            .div(stakedValue[i].totalWethValue)
+              .times(SOJU_PER_BLOCK)
+              .times(BLOCKS_PER_YEAR)
+              .times(stakedValue[i].poolWeight)
+              .div(stakedValue[i].totalWethValue)
           : null,
       }
 
@@ -107,10 +102,10 @@ const FarmCards: React.FC = () => {
           </StyledRow>
         ))
       ) : (
-          <StyledLoadingWrapper>
-            <Loader text="Cooking the rice ..." />
-          </StyledLoadingWrapper>
-        )}
+        <StyledLoadingWrapper>
+          <Loader text="Cooking the rice ..." />
+        </StyledLoadingWrapper>
+      )}
     </StyledCards>
   )
 }
@@ -177,61 +172,100 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm }) => {
         return 'icon'
     }
   }
-  let currentLocale = intl.determineLocale({
-    urlLocaleKey: "lang",
-    cookieLocaleKey: "lang"
-  })
-
+  const button = (farm: any) => {
+    if (farm.tokenSymbol === 'SOJU') {
+      let link
+      if (farm.tokenSymbol === 'SOJU') {
+        link = 'https://uniswap.info/pair/0x550e7ad2bca31981f24918cb806457008c2b11be'
+      }
+      return (
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            width: '100%',
+          }}
+        >
+          <Button
+            disabled={!poolActive}
+            text={poolActive ? intl.get('Select') : undefined}
+            to={`/farms/${farm.id}`}
+          >
+            {!poolActive && (
+              <Countdown
+                date={new Date(startTime * 1000)}
+                renderer={renderer}
+              />
+            )}
+          </Button>
+          <span style={{ width: '20px' }}></span>
+          <Button
+            disabled={!poolActive}
+            text={poolActive ? 'Buy' : undefined}
+            href={link}
+          >
+            {!poolActive && (
+              <Countdown
+                date={new Date(startTime * 1000)}
+                renderer={renderer}
+              />
+            )}
+          </Button>
+        </div>
+      )
+    } else {
+      return (
+        <Button
+          disabled={!poolActive}
+          text={poolActive ? intl.get('Select') : undefined}
+          to={`/farms/${farm.id}`}
+        >
+          {!poolActive && (
+            <Countdown date={new Date(startTime * 1000)} renderer={renderer} />
+          )}
+        </Button>
+      )
+    }
+  }
   return (
     <StyledCardWrapper>
       {farm.tokenSymbol === 'SOJU' && <StyledCardAccent />}
       <Card>
         <CardContent>
           <StyledContent>
-            <CardIcon><img src={iconFun(farm.icon)} style={{ width: '40px', height: '40px' }} /></CardIcon>
-            <StyledTitle>{intl.get(farm.name) ? intl.get(farm.name) : farm.name}</StyledTitle>
+            <CardIcon>
+              <img
+                src={iconFun(farm.icon)}
+                style={{ width: '40px', height: '40px' }}
+              />
+            </CardIcon>
+            <StyledTitle>
+              {intl.get(farm.name) ? intl.get(farm.name) : farm.name}
+            </StyledTitle>
             <StyledDetails>
-              <StyledDetail>{intl.get('Deposit_text', { symbol: farm.lpToken.toUpperCase() })}</StyledDetail>
-              <StyledDetail>{intl.get('Earn', { earnTokenName: farm.earnToken.toUpperCase() })} </StyledDetail>
+              <StyledDetail>
+                {intl.get('Deposit_text', {
+                  symbol: farm.lpToken.toUpperCase(),
+                })}
+              </StyledDetail>
+              <StyledDetail>
+                {intl.get('Earn', {
+                  earnTokenName: farm.earnToken.toUpperCase(),
+                })}{' '}
+              </StyledDetail>
             </StyledDetails>
             <Spacer />
-            <div style={{display:'flex',justifyContent:"space-between",width:'100%'}}>
-              <Button
-                disabled={!poolActive}
-                text={poolActive ? intl.get('Select') : undefined}
-                to={`/farms/${farm.id}`}
-              >
-                {!poolActive && (
-                  <Countdown
-                    date={new Date(startTime * 1000)}
-                    renderer={renderer}
-                  />
-                )}
-              </Button>
-              <span style={{width:'20px'}}></span>
-              <Button
-                disabled={!poolActive}
-                text={poolActive ? 'Buy' : undefined}
-                to={`/farms/UNI-ETH UNI-V2 LP`}
-              >
-                {!poolActive && (
-                  <Countdown
-                    date={new Date(startTime * 1000)}
-                    renderer={renderer}
-                  />
-                )}
-              </Button>
-            </div>
+            {button(farm)}
             <StyledInsight>
               <span>APY</span>
               <span>
                 {farm && farm.apy
                   ? `${farm.apy
-                    .times(new BigNumber(100))
-                    .toNumber()
-                    .toLocaleString('en-US')
-                    .slice(0, -1)}%`
-                  : intl.get("Loading") + ' ...'}
+                      .times(new BigNumber(100))
+                      .toNumber()
+                      .toLocaleString('en-US')
+                      .slice(0, -1)}%`
+                  : intl.get('Loading') + ' ...'}
               </span>
               {/* <span>
                 {farm.tokenAmount
@@ -353,7 +387,7 @@ const StyledDetail = styled.div`
 `
 
 const StyledInsight = styled.div`
-  max-width:250px;
+  max-width: 250px;
   display: flex;
   justify-content: space-between;
   box-sizing: border-box;
