@@ -176,7 +176,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm }) => {
     if (farm.tokenSymbol === 'SOJU') {
       let link
       if (farm.tokenSymbol === 'SOJU') {
-        link = 'https://app.uniswap.org/#/swap'
+        link = 'https://app.uniswap.org/#/swap?outputCurrency=0x49c4be97529904093bf33895ac03bef587f02219'
       }
       return (
         <div
