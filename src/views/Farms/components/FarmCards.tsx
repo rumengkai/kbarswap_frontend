@@ -44,7 +44,7 @@ const FarmCards: React.FC = () => {
       : new BigNumber(0)
 
   const BLOCKS_PER_YEAR = new BigNumber(2336000)
-  const SOJU_PER_BLOCK = new BigNumber(0.5)
+  const SOJU_PER_BLOCK = new BigNumber(0.25)
 
   const rows = farms.reduce<FarmWithStakedValue[][]>(
     (farmRows, farm, i) => {
@@ -173,7 +173,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm }) => {
     }
   }
   const button = (farm: any) => {
-    if (farm.tokenSymbol === 'SOJU') {
+    if (farm.tokenSymbol === 'SOJU1111') {
       let link
       if (farm.tokenSymbol === 'SOJU') {
         link = 'https://app.uniswap.org/#/swap?outputCurrency=0x49c4be97529904093bf33895ac03bef587f02219'
